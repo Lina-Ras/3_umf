@@ -1,0 +1,22 @@
+\documentclass[a4paper,12pt,openany]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=3cm,bindingoffset=0cm]{geometry}
+\usepackage{subfiles}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\graphicspath{
+	{img}
+}
+
+\begin{document}
+\tableofcontents
+\newpage
+	\subfile{paragraphs/template.tex}
+\chapter{Классификация дифференциальных уравнений с частными производными}
+	\subfile{paragraphs/p_1.1.tex}
+\chapter{Задача Коши}
+\end{document}
