@@ -2,5 +2,21 @@
 
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{amsthm}
 
+% Теоремы, следствия, замечания, ...
+\newtheorem{theorem}{Теорема}[chapter]
+\newtheorem{lemma}[theorem]{Лемма}
+\newcounter{corollaryCounter}[theorem]
+\newtheorem{corollary}[corollaryCounter]{Следствие}
+
+\theoremstyle{definition}
+\newtheorem*{example}{Пример}
+\newtheorem*{examples}{Примеры}
+\newtheorem{definition}{Определение}[chapter]
+
+% Числовые множества
 \newcommand{\R}{\mathbb{R}}
+
+% Разное
+\newcommand{\pderiv}[2]{\frac{\partial #1}{\partial #2}}
