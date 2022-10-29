@@ -1,0 +1,51 @@
+\makeatletter
+\makeatother
+\documentclass[../main.tex]{subfiles}
+
+\graphicspath{
+    {img}
+	{../img/}
+}
+
+\begin{document}
+\section{Приведение к каноническому виду ДУ 2-ого порядка с $n$ независимыми переменными}
+Рассмотрим уравнение
+\begin{equation}  \label{eq:1.9.1}
+    \sum_{i=1}^n\sum_{j=1}^n a_{ij} \frac{\partial^2 u}{\partial x_i \partial x_j} + \sum_{i=1}^n \frac{\partial u}{\partial x_i} + cu = f(x).
+\end{equation}
+
+Пусть $C$ -- матрица преобразования, приводящая характеристический многочлен $$\sum_{i=1}^n\sum_{j=1}^n a_{ij} \xi_i \xi_j $$ к каноническому виду 
+$$\sum_{i=1}^n a_i \mu_i^2.$$
+Введем в (\ref{eq:1.9.1}) замену 
+$$x_i = \sum_i^n c_{ji}y_i,$$
+где $c_{ji}$ -- элементы $C^T$.
+Вычислим производные 
+$$\frac{\partial u}{\partial x_i} = \sum^n_{i=k}\frac{\partial u}{\partial y_k} \frac{\partial y_k}{\partial x_i} = \sum_{k=1}^n c_{ik} \frac{\partial u}{\partial y_k}$$
+$$\frac{\partial^2 u}{\partial x_i \partial x_j} = \sum^n_{k=1}\sum^n_{s=1} c_{ik} c_{js} \frac{\partial^2 u}{\partial y_k \partial y_s}$$
+и, подставив в исходное уравнение, получим
+\begin{equation}
+\boxed{\sum^n_{k=1}\sum^n_{s=1} A_{ks} \frac{\partial^2 u}{\partial y_k \partial y_s} + \sum_{k=1}^n A_k \frac{\partial u}{\partial y_k} + cu = f}
+\end{equation}
+$$A_{ks} = \sum^n_{i=1}\sum^n_{j=1} a_{ij} c_{ij} c_{js},$$
+$$A_k = \sum_{i=1}^n a_i c_{ik}.$$
+Коэффициенты $A$ в приведенном уравнении совпадают с коэффициентами в приведенной квадратичной форме.
+
+Таким образом, чтобы привести ДУ 2-ого порядка с $n$ независимымим переменными к каноническому виду, необходимо:
+\begin{enumerate}
+    \item Выписать характеристический многочлен исходного уравнения.
+    \item Привести характеристический многочлен к каноническому виду.
+    \item Выписать матрицу преобразования, приводящего многочлен к каноническому виду.
+    \item Протранспонировать матрицу преобразования.
+    \item С помощью транспонированной матрицы ввести замену в исходном уравнении.
+\end{enumerate}
+{\bf В случае $n=3$ замена переменных дает:
+\begin{enumerate}
+    \item Гиперболический вид
+    $$\frac{\partial^2 u }{\partial y_1 ^2} + \frac{\partial^2 u}{\partial y_2^2} - \frac{\partial^2 u}{\partial y_3^2} + a_1 \frac{\partial u}{\partial y_1} + a_2 \frac{\partial u}{\partial y_2} + a_3 \frac{\partial u}{\partial y_3} + cu = f$$ 
+    \item Эллиптический вид
+    $$\frac{\partial^2 u }{\partial y_1 ^2} + \frac{\partial^2 u}{\partial y_2^2} + \frac{\partial^2 u}{\partial y_3^2} + a_1 \frac{\partial u}{\partial y_1} + a_2 \frac{\partial u}{\partial y_2} + a_3 \frac{\partial u}{\partial y_3} + cu = f$$ 
+    \item Параболический вид
+    $$\frac{\partial^2 u}{\partial y_2^2} + \frac{\partial^2 u}{\partial y_3^2} + a_1 \frac{\partial u}{\partial y_1} + a_2 \frac{\partial u}{\partial y_2} + a_3 \frac{\partial u}{\partial y_3} + cu = f.$$
+\end{enumerate}}
+
+\end{document}
