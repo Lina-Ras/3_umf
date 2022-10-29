@@ -13,7 +13,13 @@
 \theoremstyle{definition}
 \newtheorem*{example}{Пример}
 \newtheorem*{examples}{Примеры}
-\newtheorem{definition}{Определение}[chapter]
+\newtheorem*{definition}{Определение}
+
+%Часто используемые греческие буквы
+\newcommand{\al}{\alpha}
+
+% Нумеровать формулы по главам
+\numberwithin{equation}{chapter}
 
 % Числовые множества
 \newcommand{\R}{\mathbb{R}}
