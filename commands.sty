@@ -3,6 +3,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
+\usepackage{etoolbox}
 
 % Теоремы, следствия, замечания, ...
 \newtheorem{theorem}{Теорема}[chapter]
@@ -20,3 +21,4 @@
 
 % Разное
 \newcommand{\pderiv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pderivTwo}[3]{\frac{\partial #1^2}{\ifstrequal{#2}{#3}{\partial #2^2}{\partial #2 \partial #3}}}
