@@ -76,7 +76,7 @@ jobs:
         # Вертикальная черта | — это специальный символ yaml. Означает, что дальше идет массив команд и их все надо выполнить
 
         run: |
-          echo "NAME=date::$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+          echo "::set-output name=date::$(date +'%Y-%m-%d')"
 
       - name: Download artifacts
 
@@ -106,7 +106,7 @@ jobs:
 
           # Получим теги вида “umf-<дата билда>-<первые 8 символов из sha коммита>
 
-          tag_name: umf-${{ steps.vars.outputs.NAME }}
+          tag_name: umf-${{ steps.vars.outputs.date }}
 
           # Имя, которое будет высвечиваться в релизе
 
