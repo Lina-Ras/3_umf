@@ -76,10 +76,7 @@ jobs:
         # Вертикальная черта | — это специальный символ yaml. Означает, что дальше идет массив команд и их все надо выполнить
 
         run: |
-
-          echo «::set-output name=date::$(date +'%Y-%m-%d')»
-
-          echo «::set-output name=sha8::$(echo ${GITHUB_SHA} | cut -c1-8)»
+          echo "NAME=date::$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
 
       - name: Download artifacts
 
