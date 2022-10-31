@@ -1,0 +1,95 @@
+\makeatletter
+\makeatother
+\documentclass[../main.tex]{subfiles}
+
+\graphicspath{
+    {img}
+	{../img/}
+}
+
+\begin{document}
+\section{Решение задачи Коши для волнового уравнения методом характеристик}
+Поставим задачу Коши для однородного уравнения поперечных колебаний струны
+\begin{equation} \label{eq:2.2.1}
+        \frac{\partial^2u}{\partial t^2}-a^2*\frac{\partial^2u}{\partial x^2}=0, \D=\lbrace- \infty<x<+\infty, |t|\leq T \rbrace
+    \end{equation}
+    \begin{equation} \label{eq:2.2.2}
+         u|_{t=0} = \varphi(x), -\infty<x<+\infty
+    \end{equation}
+    \begin{equation} \label{eq:2.2.3}
+        \pderiv{u}{t}|_{t=0} = \psi(x),  -\infty<x<+\infty
+\end{equation}
+ где $a=\sqrt{\frac{N}{p}}$; N - натяжение струны; p- линейная плотность струны;
+$\varphi \in C^2(\R^1), \psi \in C^1(\R^1), u(x,t) \in C^2(\D)$, t - временная переменная, x - пространственная переменная.\\
+(\ref{eq:2.2.1}) - поперечные колебания тонкой упругой струны.\\
+u(x, y)- график струны в момент времени t.Отклонение точки струны с координатой x от оси Ox\\
+(\ref{eq:2.2.2}) - начальный график струны.\\
+(\ref{eq:2.2.3}) - скорость в начальный момент времени.\\
+\begin{center}
+    {\largeМетод Характеристик}\\
+    \begin{enumerate}
+        \item 
+        Уравнение приводится к каноническому виду
+        \item
+        Находим общее решение
+        \item
+        Путем подставления в начальное условие определяется единственное решение.
+    \end{enumerate}
+\end{center}
+\subsection{Формула Даламбера}
+    $(dx)^2-a^2(dt)^2=0$\\
+    Для гиперболического уравнения на основании характеристических уравнений (\ref{eq:2.2.2}) и (\ref{eq:2.2.3}), найдем два семейства характеристик на плоскости Oxt:\\\\
+$x-at=C_1$,       $x+at=C_2$\\\\
+Делаем замену переменных:\\\\
+\begin{left}
+$$
+\left\{
+\begin{array}{lcl}
+\xi=x-at\\
+\eta=x+at\\
+\end{array}
+\right.
+$$
+\end{left}\\\\
+Приводим гиперболическое уравнение к каноническому виду:\\\\
+$\pderiv{u}{t}=a\pderiv{u}{\xi}+a\pderiv{u}{\eta}$\\ \\
+$\pderivt{u}{t}=a^2\pderivt{u}{\xi}+a^2\pderivt{u}{\eta}-2a^2\frac{\partial^2 u}{\partial\xi\partial\eta}$\\ \\
+$\pderiv{u}{x}=\pderiv{u}{\xi}+\pderiv{u}{\eta}$\\ \\
+$\pderivt{u}{x}=\pderivt{u}{\xi}+\pderivt{u}{\eta}+2\frac{\partial^2 u}{\partial\xi\partial\e ta}$\\ \\
+$-4a^2\frac{\partial^2 u}{\partial\xi\partial\eta}=0$\\ \\
+$\frac{\partial^2 u}{\partial\xi\partial\eta}=0$\\ \\ $u(\xi,\eta)=C_1(\xi)+C_2(\eta)$ \\ \\
+Получаем общее решение однородного уравнения колебаний струны:\\\\
+$u(x,t)=C_1(x-at)+C_2(x+at)$\\\\
+Определим неизвестные функции $C_1(), C_2()$ из начальных условий.\\\\
+\begin{left}
+$$
+\left\{
+\begin{array}{}
+ C_1(x)+C_2(x)=\varphi(x)\\
+-aC_1'(x)+aC_2'(x)=\phi(x)\\
+\end{array}
+\right.
+$$
+\end{left}
+, где $C_{1,2}'(x)$- производные по переменной x.\\
+\\Интегрируем второе уравнеие:\\\\
+\begin{left}
+$$
+\left\{
+\begin{array}{lcl}
+-C_1(x)+C_2(x)=\frac{1}{a}\int_{x_0}^x\phi(\xi)d\xi+C\\
+C_1(x)+C_2(x)=\varphi(x)\\
+\end{array}
+\right.
+$$
+\end{left}
+\\\\
+$C_2(x)=\frac{1}{2a}\int_{x_0}^x\phi(\xi)d\xi+\frac{C}{2}+\frac{\varphi(x)}{2}$\\\\
+$C_1(x)=\frac{\varphi(x)}{2}-\frac{1}{2a}\int_{x_0}^x\phi(\xi)d\xi-\frac{C}{2}$\\\\
+Подставляем полученные значения в общее решение:\\\\
+$u(x,t)=\frac{\varphi(x-at)}{2}-\frac{1}{2a}\int_{x_0}^{x-at}\phi(\xi)d\xi-\frac{C}{2}+\frac{1}{2a}\int_{x_0}^{x+at}\phi(\xi)d\xi+\frac{C}{2}+\frac{\varphi(x+at)}{2}$
+\begin{equation}\label{eq:2.2.4}
+u(x,t)=\frac{\varphi(x-at)+\varphi(x+at)}{2}+\frac{1}{2a}\int_{x-at}^{x+at}\phi(\xi)d\xi
+\end{equation}
+(\ref{eq:2.2.4}) - формула Даламбера или формула решения задачи Коши для волнового уравнения.
+\end{document}
