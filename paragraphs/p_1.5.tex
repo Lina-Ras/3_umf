@@ -1,0 +1,98 @@
+\makeatletter
+\makeatother
+\documentclass[../main.tex]{subfiles}
+
+\graphicspath{
+    {img}
+	{../img/}
+}
+\begin{document}
+\section{Системы дифференциальных уравнений с частными производными.}
+$$U_1(x_1,...,x_n),U_2(x_1,...,x_n),...U_k(x_1,...,x_n).$$ \\
+Рассмотрим систему из k уравнений: 
+
+$$\begin{dcases}
+F_1(x_1, x_2,..., x_n, z_1, z_2,..., z_N_1), \\
+F_2(x_1, x_2,..., x_n, z_1, z_2,..., z_N_2), \\
+......................................... \\
+F_k(x_1, x_2,..., x_n, z_1, z_2,..., z_N_k)
+\end{dcases} $$ \\
+Имеем:
+$$\begin{dcases}
+F_1(x_1, x_2,..., x_n, \pderiv{u_1}{x_1},...,\pderiv{u_k}{x_n},..., \frac{\partial ^{m_1} u_k}{\partial x^{m_1}_n}) = 0, \\
+F_2(x_1, x_2,..., x_n, \pderiv{u_1}{x_1},...,\pderiv{u_k}{x_n},..., \frac{\partial ^{m_2} u_k}{\partial x^{m_2}_n}) = 0, \\
+........................................................ \\
+F_1(x_1, x_2,..., x_n, \pderiv{u_1}{x_1},...,\pderiv{u_k}{x_n},..., \frac{\partial ^{m_k} u_k}{\partial x^{m_k}_n}) = 0, \\
+\end{dcases} $$ \\
+Рассмотрим линейную систему 1-го порядка:\\
+$$
+\begin{dcases}
+b_{11}\pderiv{u}{x} + b_{12}\pderiv{u}{y} + C_{11}\pderiv{v}{x} + C_{12}\pderiv{v}{y}+b_1u + C_1v = f_1 \\ 
+b_{21}\pderiv{u}{x} + b_{22}\pderiv{u}{y} + C_{21}\pderiv{v}{x} + C_{22}\pderiv{v}{y}+b_2u + C_2v = f_2
+\end{dcases}$$\\
+Представим в матричном виде:\\
+$$Lu = f$$ \\
+Где:
+$$
+L = \begin{bmatrix}
+C_{11}\pderiv{}{x} + C_{12}\pderiv{}{y} + C_1 \ & \ b_{11}\pderiv{}{x} + b_{12}\pderiv{}{y} + b_1 \\ \\ 
+C_{21}\pderiv{}{x} + C_{22}\pderiv{}{y} + C_2 \ & \ b_{21}\pderiv{}{x} + b_{22}\pderiv{}{y} + b_2
+\end{bmatrix}
+$$ \\ 
+$$u = \begin{bmatrix}
+u \\ v
+\end{bmatrix}, \  f = \begin{bmatrix}
+f_1 \\ f_2
+\end{bmatrix}$$ \\
+Главная часть: \\ 
+$$
+L_0 = \begin{bmatrix}
+C_{11}\pderiv{}{x} + C_{12}\pderiv{}{y} \ & \ b_{11}\pderiv{}{x} + b_{12}\pderiv{}{y} \\ \\ 
+C_{21}\pderiv{}{x} + C_{22}\pderiv{}{y} \ & \ b_{21}\pderiv{}{x} + b_{22}\pderiv{}{y} 
+\end{bmatrix}
+$$ \\ \\
+Умножим $L_0u$, а также проведем замену: $\pderiv{}{x} \rightarrow \xi_1, \pderiv{}{y} \rightarrow \xi_2$. \\
+\\ Запишем характеристическую матрицу:
+$$
+A = \begin{bmatrix}
+C_{11}\xi_1 + C_{12}\xi_2 \ & \ b_{11}\xi_1 + b_{12}\xi_2 \\ \\ 
+C_{21}\xi_1 + C_{22}\xi_2 \ & \ b_{21}\xi_1 + b_{22}\xi_2 
+\end{bmatrix}
+$$ \\ \\
+Характеристический многочлен:\\
+$$P(\xi) = detA = a_{11}\xi_1^2 + 2a_{12}\xi_1\xi_2+a_{22}\xi_2^2$$
+
+$$a_{11} = C_{11}b_{21} - C_{21}b_{11}, \ \ 
+a_{22} = C_{12}b_{22} - C_{22}b_{12}$$
+$$a_{12} = \frac{1}{2}(C_{11}b_{22} + C_{12}b_{21} - C_{21}b_{12} - C_{22}b_{11})$$ \\ 
+Классификация исходной системы проводится таким же образом, как и классификация дифференциального уравнения 2-го порядка:
+\\$$D = a_{12}^2 - a_{11}a_{22} $$ \\
+$D > 0$ - гиперболический тип \\
+$D = 0$ - параболический тип \\
+$D < 0$ - эллиптический тип \\
+\\
+\\
+\textbf{Пример:}\\
+Определить тип системы
+$$
+\begin{dcases}
+2\pderiv{u}{x} + 3\pderiv{u}{y}-3\pderiv{v}{y}+u=0 \\
+-\pderiv{u}{x} + \pderiv{u}{y}+\pderiv{v}{x}+xy=0
+\end{dcases} \\ 
+$$ \\ 
+$$L_{0}u = \begin{bmatrix}
+2\pderiv{}{x}+3\pderiv{}{y} \ & \ 0\pderiv{}{x}-3\pderiv{}{y} \\ \\
+\pderiv{}{x}+\pderiv{}{y}\ & \ \pderiv{}{x} + 0\pderiv{}{y} 
+\end{bmatrix}\begin{bmatrix}
+u \\ v
+\end{bmatrix}$$ \\
+Запишем характеристическую матрицу:
+$$A = \begin{bmatrix}
+2\xi_1+3\xi_2 \ & \ -3\xi_2 \\ \\
+-\xi_1 + \xi_2 \  & \ \xi_1 
+\end{bmatrix}$$
+Характеристический многочлен:\\ \\
+$P = 2\xi_1^2 + 3\xi_1\xi_2-3\xi_1\xi_2+3\xi_2^2=2\xi_1^2+3\xi_2^2$ \\ \\
+$D = -2*6<0\rightarrow $ эллиптический.
+
+\end{document}
