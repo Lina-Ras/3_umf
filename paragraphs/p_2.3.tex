@@ -23,20 +23,12 @@
 Введём метрики для \[V_1:p_1(\varphi_1,\varphi_2)=\sup_{-\infty<x<+\infty}|\varphi_1-\varphi_2|,\] \[V_2:p_2(\psi_1,\psi_2)=\sup_{-\infty<x<+\infty}|\psi_1-\psi_2|\]\[V:p(u_1,u_2)=\sup_{-\infty<x<+\infty}|u_1-u_2|\]\[ |t| \leq T\]\\
 Само выведение функции Даламбера позволяет утверждать, что решение задачи существует и единственно.\\\\
     Рассмотрим 2 задания:\\\\
-$
-\begin{large}
-\begin{left}
-\lbrace
-\begin{array}{cc}
-     \pderivt{u_i}{t}=a^2\pderivt{u_i}{x}\\\\
+$$\begin{dcases}
+\pderivt{u_i}{t}=a^2\pderivt{u_i}{x}\\\\
      u_i|_{t=0}=\varphi_i(x)\\\\
      \pderiv{u_i}{t}|_{t=0}=\psi_i(x)
-\end{array}
-\right.
-\end{left}  
-\end{large}
-$
-$i=\overline{1,2}$\\ \\
+\end{dcases} $$ 
+$i=\overline{1,2}$\\ 
 Надо показать, что $\forall \epsilon > 0$  $\exists \delta > 0$,  что как только $p_1(\varphi_1, \varphi_2)<\delta$, $p_2(\psi_1, \psi_2)<\delta$, то $p(u_1, u_2)<\epsilon$\\
 Оценим\\
 $|u_1-u_2| \leq |\frac{1}{2}\varphi_1(x+at)-\frac{1}{2}\varphi_2(x+at)|+|\frac{1}{2}\varphi_1(x-at)-\frac{1}{2}\varphi_2(x-at)|+\frac{1}{2a}\int_{x-at}^{x+at}|\psi_1(\xi)-\psi_2(\xi)|d\xi$<\\\\$\frac{\delta}{2}+\frac{\delta}{2}+\frac{\delta}{2a}\int_{x-at}^{x+at}d\xi \leq \delta+\delta|t| \leq \delta(1+T)$, а следовательно, если выбрать  $0<\delta<\frac{\xi}{1+T}$, то получим $p(u_1, u_2)<\xi$.\\\\
