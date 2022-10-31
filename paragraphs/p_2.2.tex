@@ -40,56 +40,56 @@ u(x, y)- график струны в момент времени t.Отклон
     $(dx)^2-a^2(dt)^2=0$\\
     Для гиперболического уравнения на основании характеристических уравнений (\ref{eq:2.2.2}) и (\ref{eq:2.2.3}), найдем два семейства характеристик на плоскости Oxt:\\\\
 $x-at=C_1$,       $x+at=C_2$\\\\
-Делаем замену переменных:\\\\
+Делаем замену переменных:\\
+$
 \begin{left}
-$$
-\left\{
+\{
 \begin{array}{lcl}
 \xi=x-at\\
 \eta=x+at\\
 \end{array}
 \right.
-$$
-\end{left}\\\\
+\end{left}
+$\\\\
 Приводим гиперболическое уравнение к каноническому виду:\\\\
 $\pderiv{u}{t}=a\pderiv{u}{\xi}+a\pderiv{u}{\eta}$\\ \\
 $\pderivt{u}{t}=a^2\pderivt{u}{\xi}+a^2\pderivt{u}{\eta}-2a^2\frac{\partial^2 u}{\partial\xi\partial\eta}$\\ \\
 $\pderiv{u}{x}=\pderiv{u}{\xi}+\pderiv{u}{\eta}$\\ \\
-$\pderivt{u}{x}=\pderivt{u}{\xi}+\pderivt{u}{\eta}+2\frac{\partial^2 u}{\partial\xi\partial\e ta}$\\ \\
+$\pderivt{u}{x}=\pderivt{u}{\xi}+\pderivt{u}{\eta}+2\frac{\partial^2 u}{\partial\xi\partial\eta}$\\ \\
 $-4a^2\frac{\partial^2 u}{\partial\xi\partial\eta}=0$\\ \\
 $\frac{\partial^2 u}{\partial\xi\partial\eta}=0$\\ \\ $u(\xi,\eta)=C_1(\xi)+C_2(\eta)$ \\ \\
 Получаем общее решение однородного уравнения колебаний струны:\\\\
 $u(x,t)=C_1(x-at)+C_2(x+at)$\\\\
 Определим неизвестные функции $C_1(), C_2()$ из начальных условий.\\\\
+$
 \begin{left}
-$$
-\left\{
-\begin{array}{}
- C_1(x)+C_2(x)=\varphi(x)\\
--aC_1'(x)+aC_2'(x)=\phi(x)\\
+\{
+\begin{array}{lcl}
+ C_{1}(x)+C_2(x)=\varphi(x)\\
+-aC_1'(x)+aC_2'(x)=\psi(x)\\
 \end{array}
 \right.
-$$
 \end{left}
+$
 , где $C_{1,2}'(x)$- производные по переменной x.\\
 \\Интегрируем второе уравнеие:\\\\
+$
 \begin{left}
-$$
-\left\{
+\{
 \begin{array}{lcl}
--C_1(x)+C_2(x)=\frac{1}{a}\int_{x_0}^x\phi(\xi)d\xi+C\\
+-C_1(x)+C_2(x)=\frac{1}{a}\int_{x_0}^x\psi(\xi)d\xi+C\\
 C_1(x)+C_2(x)=\varphi(x)\\
 \end{array}
 \right.
-$$
 \end{left}
+$
 \\\\
-$C_2(x)=\frac{1}{2a}\int_{x_0}^x\phi(\xi)d\xi+\frac{C}{2}+\frac{\varphi(x)}{2}$\\\\
-$C_1(x)=\frac{\varphi(x)}{2}-\frac{1}{2a}\int_{x_0}^x\phi(\xi)d\xi-\frac{C}{2}$\\\\
+$C_2(x)=\frac{1}{2a}\int_{x_0}^x\psi(\xi)d\xi+\frac{C}{2}+\frac{\varphi(x)}{2}$\\\\
+$C_1(x)=\frac{\varphi(x)}{2}-\frac{1}{2a}\int_{x_0}^x\psi(\xi)d\xi-\frac{C}{2}$\\\\
 Подставляем полученные значения в общее решение:\\\\
-$u(x,t)=\frac{\varphi(x-at)}{2}-\frac{1}{2a}\int_{x_0}^{x-at}\phi(\xi)d\xi-\frac{C}{2}+\frac{1}{2a}\int_{x_0}^{x+at}\phi(\xi)d\xi+\frac{C}{2}+\frac{\varphi(x+at)}{2}$
+$u(x,t)=\frac{\varphi(x-at)}{2}-\frac{1}{2a}\int_{x_0}^{x-at}\psi(\xi)d\xi-\frac{C}{2}+\frac{1}{2a}\int_{x_0}^{x+at}\psi(\xi)d\xi+\frac{C}{2}+\frac{\varphi(x+at)}{2}$
 \begin{equation}\label{eq:2.2.4}
-u(x,t)=\frac{\varphi(x-at)+\varphi(x+at)}{2}+\frac{1}{2a}\int_{x-at}^{x+at}\phi(\xi)d\xi
+u(x,t)=\frac{\varphi(x-at)+\varphi(x+at)}{2}+\frac{1}{2a}\int_{x-at}^{x+at}\psi(\xi)d\xi
 \end{equation}
 (\ref{eq:2.2.4}) - формула Даламбера или формула решения задачи Коши для волнового уравнения.
 \end{document}
