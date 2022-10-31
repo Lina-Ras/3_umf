@@ -1,0 +1,53 @@
+name: Build and deploy latex sources to GitHub Pages
+
+on: push
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+    # Необходимо использовать этот action, чтобы получить содержимое репо
+
+    - uses: actions/checkout@v2
+
+    # Компилируем документ
+
+    - name: Build document
+
+      uses: xu-cheng/latex-action@v2
+
+      with:
+
+        root_file: main.tex
+
+        working_directory: latex_sources/
+
+        # Аргументы, к которыми запускать компилятор (latexmk)
+
+        # -jobname=<name> дает возможность поменять имя выходного файла
+
+        args: -jobname=umf -pdf -file-line-error -halt-on-error -interaction=nonstopmode
+
+        compiler: latexmk
+
+    # Загружаем собранные pdf-файлы
+
+    - name: Upload pdf document
+
+      uses: actions/upload-artifact@v2
+
+      with:
+
+        # Это значение используется как ключ в хранилище
+
+        name: umf
+
+        # Путь до собранного pdf. Может содержать «*», «**»
+
+        # Здесь это <working_directory>/<jobname>.pdf
+
+        path: latex_sources/umf.pdf
