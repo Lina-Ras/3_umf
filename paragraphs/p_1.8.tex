@@ -1,0 +1,35 @@
++\makeatletter
+\makeatother
+\documentclass[../main.tex]{subfiles}
+
+\graphicspath{
+    {img}
+	{../img/}
+}
+\begin{document}
+\section{Классификация ДУ 2-го порядка с n независимыми переменными}
+\par Рассмотрим в $\Omega \subset \R^n $ линейное дифференциальное уравнение 2-го порядка с n независимыми переменными: \\
+\begin{equation}\label{1.8.1}
+\sum_{i=1}^n\sum_{j=1}^n a_{ij}\frac{\partial^2u}{\partial x_i \partial x_j} + \sum_{i=1}^n a_i \pderiv{u}{x_i} + cu = f(x) \end{equation} \\
+$a_{ij} \in C^2(\Omega), \; a_{ij} = a_{ji} $ \\
+\par Привести к каноническому виду можно только уравнение с постоянными коэффициентами. \\
+$L_0u = \sum_{i=1}^n \sum_{j=1}^n a_{ij} \frac{\partial^2u}{\partial x_i \partial x_j} $ - главная часть уравнения \\
+$\frac{\partial}{\partial x_i} \rightarrow \xi_i$ \\
+Характеристический многочлен: \\
+\begin{equation}\label{1.8.2}
+P(\xi) = \sum_{i=1}^n \sum_{j=1}^n a{ij}\xi_i\xi_j \end{equation} $u$ - квадратичная форма, для которой существует невырожденное преобразование, приводящее её к каноническому виду \\
+$\xi_i = \sum_{j=1}^n c_j \mu_j $ \\
+\par $c_{ij}$ - элементы матрицы, приводящей (\ref{1.8.2}) к каноническому виду. \\
+$\xi_i = \sum_{k=1}^n c_{ik}\mu_k , \; \xi_j = \sum_{j=1}^n c_{js}\mu_s . $ \\
+\par В (\ref{1.8.2}): \\
+$P(\xi) = \sum_{i=1}^n \sum_{j=1}^n a_{ij} \sum_{k=1}^n c_{ik} \sum{s=1}^n c_{js}\mu_s\mu_k = \sum_{k=1}^n\sum_{j=1}^n A_{ks}\mu_k\mu_s$ \\
+, где $A_{ks} = \sum_{i=1}^n\sum_{j=1}^n a{ij}c_{ik}c_{js} $ \\
+Существует невырожденное преобразование, которое приведёт к виду: 
+\begin{equation}\label{1.8.3}
+\sum_{i=1}^n a_i\mu_i^2, \; A_{ks}=0, k \neq s; \; A_{ii} = a_i, \; a_i = 0;-1;1. \end{equation} \\
+Количество 0;-1;1 не зависит от выбора преобразования. \\
+Классификация (\ref{1.8.1}) проводится по каноническому виду формулы (\ref{1.8.3}). \\
+\par Таким образом, если в каноническом виде все $a_i = 1$ или $-1, \; i=\overline{1,n}$, то искомое уравнение эллиптического типа. \\
+\par Если $a_1 = 1, a_i = -1, \; i = \overline{2,n} $ или $a_1 = -1, a_i = 1, \; i = \overline{2,n}$ , то искомое уравнение - гиперболического типа. \\
+\par Если $a_1 = 0, a_i = 1, \; i = \overline{2,n} $ или $a_1=0, a_i = -1, \; i = \overline{2,n}$, то исходное уравнение - параболического типа. \\
+\end{document}
