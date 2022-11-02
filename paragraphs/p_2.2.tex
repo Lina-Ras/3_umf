@@ -10,19 +10,24 @@
 \begin{document}
 \section{Решение задачи Коши для волнового уравнения методом характеристик}
 Поставим задачу Коши для однородного уравнения поперечных колебаний струны
-\begin{equation} \label{eq:2.2.1}
-        \frac{\partial^2u}{\partial t^2}-a^2*\frac{\partial^2u}{\partial x^2}=0, \D=\lbrace- \infty<x<+\infty, |t|\leq T \rbrace
-    \end{equation}
-    \begin{equation} \label{eq:2.2.2}
-         u|_{t=0} = \varphi(x), -\infty<x<+\infty
-    \end{equation}
-    \begin{equation} \label{eq:2.2.3}
-        \pderiv{u}{t}|_{t=0} = \psi(x),  -\infty<x<+\infty
+\begin{equation}
+    \label{eq:2.2.1}
+    \frac{\partial^2u}{\partial t^2}-a^2 \cdot \frac{\partial^2u}{\partial x^2}=0, \;
+    \D=\lbrace- \infty<x<+\infty, |t|\leq T \rbrace, \quad
+    u(x,t) \in C^2(\D)
 \end{equation}
- где $a=\sqrt{\frac{N}{p}}$; N - натяжение струны; p- линейная плотность струны;
-$\varphi \in C^2(\R^1), \psi \in C^1(\R^1), u(x,t) \in C^2(\D)$, t - временная переменная, x - пространственная переменная.\\
+\begin{equation} 
+    \label{eq:2.2.2}
+    u|_{t=0} = \varphi(x), -\infty<x<+\infty, \quad \varphi \in C^2(\R^1)
+\end{equation}
+\begin{equation} 
+    \label{eq:2.2.3}
+    \pderiv{u}{t}|_{t=0} = \psi(x),  -\infty<x<+\infty, \quad \psi \in C^1(\R^1)
+\end{equation}
+где $a=\sqrt{\frac{N}{p}}$; \quad N - натяжение струны; \quad p - линейная плотность струны;\\
+t - временная переменная; \quad x - пространственная переменная.\\
 (\ref{eq:2.2.1}) - поперечные колебания тонкой упругой струны.\\
-u(x, y)- график струны в момент времени t.Отклонение точки струны с координатой x от оси Ox\\
+u(x, y) - график струны в момент времени t. Отклонение точки струны с координатой x от оси Ox\\
 (\ref{eq:2.2.2}) - начальный график струны.\\
 (\ref{eq:2.2.3}) - скорость в начальный момент времени.\\
 \begin{center}
@@ -36,11 +41,16 @@ u(x, y)- график струны в момент времени t.Отклон
         Путем подставления в начальное условие определяется единственное решение.
     \end{enumerate}
 \end{center}
+
 \subsection{Формула Даламбера}
-    $(dx)^2-a^2(dt)^2=0$\\
-    Для гиперболического уравнения на основании характеристических уравнений (\ref{eq:2.2.2}) и (\ref{eq:2.2.3}), найдем два семейства характеристик на плоскости Oxt:\\\\
-$x-at=C_1$,       $x+at=C_2$\\\\
-Делаем замену переменных:\\
+\begin{equation*}
+    (dx)^2-a^2(dt)^2=0
+\end{equation*}
+Для гиперболического уравнения на основании характеристических уравнений (\ref{eq:2.2.2}) и (\ref{eq:2.2.3}),
+ найдем два семейства характеристик на плоскости $Oxt$:
+\[x-at=C_1, \qquad  x+at=C_2\]
+
+Выполним замену переменных:\\
 $
 \begin{left}
 \{
@@ -50,17 +60,22 @@ $
 \end{array}
 \right.
 \end{left}
-$\\\\
-Приводим гиперболическое уравнение к каноническому виду:\\\\
-$\pderiv{u}{t}=a\pderiv{u}{\xi}+a\pderiv{u}{\eta}$\\ \\
-$\pderivt{u}{t}=a^2\pderivt{u}{\xi}+a^2\pderivt{u}{\eta}-2a^2\frac{\partial^2 u}{\partial\xi\partial\eta}$\\ \\
-$\pderiv{u}{x}=\pderiv{u}{\xi}+\pderiv{u}{\eta}$\\ \\
-$\pderivt{u}{x}=\pderivt{u}{\xi}+\pderivt{u}{\eta}+2\frac{\partial^2 u}{\partial\xi\partial\eta}$\\ \\
-$-4a^2\frac{\partial^2 u}{\partial\xi\partial\eta}=0$\\ \\
-$\frac{\partial^2 u}{\partial\xi\partial\eta}=0$\\ \\ $u(\xi,\eta)=C_1(\xi)+C_2(\eta)$ \\ \\
-Получаем общее решение однородного уравнения колебаний струны:\\\\
-$u(x,t)=C_1(x-at)+C_2(x+at)$\\\\
-Определим неизвестные функции $C_1(), C_2()$ из начальных условий.\\\\
+$\\
+
+\begin{gather*}
+    \text{Приведём гиперболическое уравнение к каноническому виду:}\\
+    \pderiv{u}{t}=a\pderiv{u}{\xi}+a\pderiv{u}{\eta}\\
+    \pderivt{u}{t}=a^2\pderivt{u}{\xi}+a^2\pderivt{u}{\eta}-2a^2\frac{\partial^2 u}{\partial\xi\partial\eta}\\
+    \pderiv{u}{x}=\pderiv{u}{\xi}+\pderiv{u}{\eta}\\
+    \pderivt{u}{x}=\pderivt{u}{\xi}+\pderivt{u}{\eta}+2\frac{\partial^2 u}{\partial\xi\partial\eta} \\
+    -4a^2\frac{\partial^2 u}{\partial\xi\partial\eta}=0 \\
+    \frac{\partial^2 u}{\partial\xi\partial\eta}=0\\
+    u(\xi,\eta)=C_1(\xi)+C_2(\eta)\\
+\end{gather*}
+
+Получаем общее решение однородного уравнения колебаний струны:\\
+\[u(x,t)=C_1(x-at)+C_2(x+at)\]\\
+Определим неизвестные функции $C_1(x), C_2(x)$ из начальных условий.\\\\
 $
 \begin{left}
 \{
