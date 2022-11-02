@@ -1,0 +1,75 @@
+\makeatletter
+\makeatother
+\documentclass[../main.tex]{subfiles}
+
+\graphicspath{
+    {img}
+	{../img/}
+}
+
+\begin{document}
+\section{Пример некорректно поставленой задачи по Адамару}
+\begin{large}
+    \begin{center}
+        $\pderivt{u}{t}-a^2\pderivt{u}{x}=0$, $\D=\{ -\infty<x<+\infty, |y|\leq T\rbrace$\\
+        $ $\\
+        $ u|_{y=0} = \varphi(x)$, $\pderiv{u}{y}|_{y=0} = \psi(x)$, $ -\infty<x<+\infty$\\ 
+        $ $\\
+    \end{center}
+\end{large}
+
+Если говорить о существовании и единственности, то исходное уравнение является уравнением типа Ковалевской и разрешимо относительно старшей производной, а следовательно в классе функций существует и единственно локальное решение этой задачи:\\
+
+Рассмотрим 2 задачи:\\
+
+\begin{center}
+
+    \begin{tabular}{c c}
+    
+    $
+    \begin{dcases}
+    \pderivt{u_1}{x}+\pderivt{u_1}{y}=0,\\\\
+         u_1|_{y=0}=0,\\\\
+         \pderiv{u_1}{y}|_{y=0}=0,
+    \end{dcases} $
+    &
+    $\begin{dcases}
+    \pderivt{u_2}{x}+\pderivt{u_2}{y}=0,\\\\
+         u_2|_{y=0}=0,\\\\
+         \pderiv{u_2}{y}|_{y=0}=e^{-\sqrt{n}}cos(nx),
+    \end{dcases} $
+    
+    \end{tabular}
+    
+\end{center}
+где n - фиксированный положительный параметр.
+
+Решения данных задач определяются выражениями
+
+\begin{center}
+    \begin{tabular}{c c c}
+         $u_1=0$, & & $u_2=\frac{1}{n}e^{-\sqrt{n}}cos(nx)sh(ny).$
+    \end{tabular}
+\end{center}
+
+Введем пространства функций $V_1=V_2=C_0^A(R^1), V=C_0^A(D)$, где $C_0^A$ - пространство ограниченных аналитических функций с соответствующими метрическими расстояниями:
+\begin{center}
+$p_1(\varphi_1,\varphi_2)=p_2(\varphi_1, \varphi_2) =||\varphi_1-\varphi_2||_C = \sup_{-\infty<x<+\infty}|\varphi_1(x)-\varphi_2(x)|, $\\
+$ $\\
+$p(u_1, u_2)=||u_1-u_2||_C=\sup_{(x,y) \in D}|u_1(x,y)-u_2(x,y)|.$\\
+$ $\\
+Если выполняется $p(\varphi_1,\varphi_2)=|\varphi_1-\varphi_2|=0<\delta$\\
+$ $\\
+и $p(\psi_1,\psi_2)=|\psi_1-\psi_2|=e^{-\sqrt(n)}<\delta$, при $n>(\ln{\delta})^2$ 
+\end{center}
+
+тогда должно выполняться равенство
+
+\begin{center}
+$p(u_1,U_2)=|u_1-u_2|=\frac{1}{n}e^{-\sqrt{n}}sh(nT)<\epsilon$.
+\end{center}
+
+Очевидно, что последнее неравенство не выполняется при достаточно больших n, так как \[\lim_{n \to \infty}{\frac{1}{n}}e^{-\sqrt{n}}sh(nT)=\infty\]\\
+
+Таким образом, задача Коши для эллиптического уравнения поставлена некорректно, так как не выполнено условие корректности.
+\end{document}

@@ -55,7 +55,7 @@ jobs:
 
     # Деплой будет только на ветке master. Закомментируйте, если не надо
 
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/main'
 
     # Можно зависеть от любого другого job. Порядок выполнения будет подстраиваться.
 
@@ -76,10 +76,7 @@ jobs:
         # Вертикальная черта | — это специальный символ yaml. Означает, что дальше идет массив команд и их все надо выполнить
 
         run: |
-
-          echo «::set-output name=date::$(date +'%Y-%m-%d')»
-
-          echo «::set-output name=sha8::$(echo ${GITHUB_SHA} | cut -c1-8)»
+          echo "::set-output name=date::$(date +'%Y-%m-%dT%H-%M-%S')"
 
       - name: Download artifacts
 
@@ -109,7 +106,7 @@ jobs:
 
           # Получим теги вида “umf-<дата билда>-<первые 8 символов из sha коммита>
 
-          tag_name: umf-${{ steps.vars.outputs.date }}-${{ steps.vars.outputs.sha8 }}
+          tag_name: umf-${{ steps.vars.outputs.date }}
 
           # Имя, которое будет высвечиваться в релизе
 
