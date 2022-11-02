@@ -19,12 +19,12 @@
     \pderiv{u}{t}|_{t=0} = \psi(x,y)
     \end{split}
 \end{equation}
-Решение записывается по формуле Пуассона.
+Решение записывается по формуле Кирхгофа.
 \begin{gather*}
     u(x,y,t) = \frac{1}{2\pi a}\pderiv{ }{t}\left(
     \int\displaylimits_{|\xi-x|<at} \frac{\varphi(\xi)d\xi}{\sqrt{a^2t^2 - |\xi-x|^2}}\right)
     +
-    \frac{1}{2\pi a}\pderiv{ }{t}\left(
+    \frac{1}{2\pi a}\left(
     \int\displaylimits_{|\xi-x|<at} \frac{\psi(\xi)d\xi}{\sqrt{a^2t^2 - |\xi-x|^2}}\right)\\
     x \rightarrow \xi_1\\
     y \rightarrow \xi_2\\
@@ -33,9 +33,9 @@
 Интегрируем по кругу с центром $M(x,y)$ радиуса $at$. Для этого перейдём к
 полярным координатам:
 \begin{gather*}
-    \xi_1 = x + \tau cos(\varphi), \qquad \xi_2 = y + \tau sin(\varphi)\\
-    d\xi = \tau d\tau d\varphi \\
-    0 \leq \tau \leq at, \qquad 0 \leq \varphi \leq 2\pi
+    \xi_1 = x + r cos(\varphi), \qquad \xi_2 = y + r sin(\varphi)\\
+    d\xi = r dr d\varphi \\
+    0 \leq r \leq at, \qquad 0 \leq \varphi \leq 2\pi
 \end{gather*}
 
 \item $n=3$
@@ -47,12 +47,12 @@
     \pderiv{u}{t}|_{t=0} = \psi(x,y,z)
     \end{split}
 \end{equation}
-Решение записывается по формуле Кирхгофа.
+Решение записывается по формуле Пуассона.
 \begin{gather*}
     u(x,y,z,t) = \frac{1}{4\pi a^2}\pderiv{ }{t}\left(
     \frac{1}{t}\int\displaylimits_{|\xi-x|=at} \varphi(\xi)d\xi\right)
     +
-    \frac{1}{4\pi a^2}\pderiv{ }{t}\left(
+    \frac{1}{4\pi a^2}\left(
     \frac{1}{t}\int\displaylimits_{|\xi-x|=at} \psi(\xi)d\xi\right)\\
     x \rightarrow \xi_1\\
     y \rightarrow \xi_2\\
@@ -62,10 +62,10 @@
 Интегрируем по сфере радиуса $at$. Для этого перейдём к
 полярным координатам:
 \begin{gather*}
-    \xi_1 = x + \tau cos(\varphi) sin(\varTheta), \\
-    \xi_2 = y + \tau sin(\varphi) sin(\varTheta),\\
-    \xi_3 = z + \tau cos(\varTheta),\\
-    d\xi = \tau^2 sin(\varTheta) d\varphi d\varTheta \\
+    \xi_1 = x + r cos(\varphi) sin(\varTheta), \\
+    \xi_2 = y + r sin(\varphi) sin(\varTheta),\\
+    \xi_3 = z + r cos(\varTheta),\\
+    d\xi = r^2 sin(\varTheta) d\varphi d\varTheta \\
     0 \leq \varphi \leq 2\pi, \qquad 0 \leq \varTheta \leq \pi
 \end{gather*}
 \end{enumerate}
