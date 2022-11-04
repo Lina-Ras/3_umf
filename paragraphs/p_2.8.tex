@@ -1,0 +1,141 @@
+\makeatletter
+\makeatother
+\documentclass[../main.tex]{subfiles}
+
+\graphicspath{
+    {img}
+	{../img/}
+}
+
+\begin{document}
+\section{Решение первой смешанной задачи для волнового уравнения
+    методом разделения переменных}
+    \textit{Кратко(под удаление, подробный параграф про смешанные задачи будет позже):\\
+    Смешанные условия $==$ начальные условия $+$ граничные условия\\
+    Перванная смешанная задача $==$ граничные условия являются функциями\\}
+
+    Решим однородное волновое уравнение:
+    
+    \begin{gather}
+        \label{eq:2.8.1}
+        \pderivt{u}{t} = a^2 \pderivt{u}{x}, \quad 0<x<l \quad t>0,
+    \end{gather}
+    Начальные условия: 
+    \begin{gather}
+        \label{eq:2.8.2}
+        u|_{t=0}=\varphi(x), \quad \pderiv{u}{t}|_{t=0}=\psi(x)
+    \end{gather}
+
+    Граничные условия первого типа: 
+    \begin{gather}
+        \label{eq:2.8.3}
+        u|_{x=0}=0,\quad u|_{x=l}=0, \quad t\geq 0
+    \end{gather}
+
+    Введём пространства:
+    \begin{gather*}
+        V_1=\{\varphi \in C^2(0;l); \varphi'''\in L_2[0;l];
+                \varphi''(0) = \varphi''(l) = \varphi(0) = \varphi(l) = 0\}\\
+        V_2=\{\psi \in C^1(0;l); \psi''\in L_2[0;l];
+                \psi(0) = \psi(l) = 0\}\\
+        V = \{u \in C^2(0<x<l);\quad t>0\}
+    \end{gather*}
+
+    \subsection{Метод разделения переменных}
+    Будем искать решение в виде:
+    \begin{gather*}
+        u(x,t) = X(x)\cdot T(t), \quad \text{где } X(x)\not\equiv 0, T(t)\not\equiv 0\\
+        XT''=a^2TX'',  \qquad |/a^2TX\\
+        \frac{T''}{a^2T} = \frac{X''}{X} = -\lambda^2 = const\\
+    \end{gather*}
+    Получим два ДУ:
+    \begin{numcases}{}
+        T''+\lambda^2a^2T=0, \label{eq:2.8.4}\\
+        X''+\lambda^2X=0 \label{eq:2.8.5}
+    \end{numcases}\\
+    Подставим в граничные условия (\ref*{eq:2.8.3}):
+    \begin{gather*}
+        u|_{x=0}=X(0)\cdot T(t)=0\\
+        \text{Из того, что } T(t)\not \equiv 0 \Rightarrow X(0)=0\\
+        u|_{x=l}=X(l)\cdot T(t)=0 \Rightarrow X(l)=0
+    \end{gather*}
+    Тогда получим:
+    \begin{gather}
+        \begin{cases} \label{eq:2.8.6}
+            X''+\lambda^2X=0\\
+            X(0)=0\\
+            X(l)=0\\
+        \end{cases}
+    \end{gather}
+    (\ref*{eq:2.8.6}) -- \textbf{задача Штурма-Лиувилля}, или задача о
+    нахождении собственных функций $X$ и собственных значений $\lambda$.\\
+    Заметим, что:
+    \begin{enumerate}
+        \item Собственные значения $\lambda \geq 0$
+        \item Собственные функции ортогональны
+        \item Собственные функции определены с точностью до постоянного множества
+        \item Всякую функцию можно разложить в ряд Фурье по собственным функциям,
+            тк собственные функции ортогональны
+    \end{enumerate}
+    Запишем характерестическое уравнение для (\ref*{eq:2.8.6}):
+    \begin{gather*}
+        \begin{array}[2]{c}
+            \nu^2+\lambda^2=0\\
+            \nu^2 = -\lambda^2
+        \end{array}
+        \Rightarrow X(x)=A\cos(\lambda x)+B\sin(\lambda x)
+    \end{gather*}
+    Подставим полученное в условия задачи Штурма-Лиувилля:
+    \begin{gather*}
+        X(0) = A = 0\\
+        X(l) = B\sin(\lambda l)=0
+    \end{gather*}
+    Положим $B=1$. Тогда:
+    \begin{gather*}
+        \lambda_n l=\pi n, \quad n=1,2\dots\\
+        \lambda_n = \frac{\pi n}{l}, \quad n=1,2\dots
+    \end{gather*}
+    Решим (\ref{eq:2.8.5}):
+    \begin{gather*}
+        T_n''+\left(\frac{\pi n a}{l}\right)^2T=0 \\ \Rightarrow 
+        T_n(t) = C_n\cos\left(\frac{\pi n a}{l}t\right) +  D_n\sin\left(\frac{\pi n a}{l}t\right)
+    \end{gather*}
+    Можем построить множество \textit{частных} решений:
+    \begin{gather*}
+        U_n(x,t)=X_n\cdot T_n=\left(C_n\cos{\frac{\pi n a}{l}t} +D_n\sin{\frac{\pi n a}{l}t}\right)
+        \sin{\frac{\pi n}{l}x}, \quad n=1,2\dots
+    \end{gather*}
+    Так как исходное уравнение линейное и однородное, то сумма частных решений будет являтся решением исходного.
+    \[
+        u(x,t) = \sum_{n=1}^{\infty}X_n\cdot T_n = 
+        \sum_{n=1}^{\infty} \left(C_n\cos{\frac{\pi n a}{l}t} +D_n\sin{\frac{\pi n a}{l}t}\right)\sin{\frac{\pi n}{l}x}
+    \]
+    Из начальных условий (\ref{eq:2.8.2}) найдём $C_n$ и $D_n$:
+    \begin{gather*}
+        u|_{t=0} = \sum_{n=1}^{\infty}C_n\sin{\frac{\pi n}{l}x} = 
+        \varphi(x) = [\text{ряд Фурье}] = \sum_{n=1}^{\infty}\varphi_n\sin{\frac{\pi n}{l}x},\\
+        \text{где } \varphi_n = \frac{2}{l}\int\displaylimits_0^l \varphi(x)\sin\left({\frac{\pi n}{l}x}\right)dx\\
+        C_n=\varphi_n
+    \end{gather*}
+    \begin{gather*}
+        \pderiv{u}{t}|_{t=0} = \sum_{n=1}^{\infty}\frac{\pi n a}{l}D_n\sin{\frac{\pi n}{l}x} = 
+        \psi(x) = [\text{ряд Фурье}] = \sum_{n=1}^{\infty}\psi_n\sin{\frac{\pi n}{l}x},\\
+        \text{где } \psi_n = \frac{2}{l}\int\displaylimits_0^l \psi(x)\sin\left({\frac{\pi n}{l}x}\right)dx\\
+        D_n=\frac{l}{\pi n a}\psi_n
+    \end{gather*}
+    Для поиска собственных функций воспользуемся изученным на курсе функционального анализа:
+    \begin{gather*}
+        \varphi(X) = \sum_{n=1}^{\infty} \varphi_n X_n\\
+        (\varphi, X_m) = \sum_{n=1}^{\infty} \varphi_n (X_n,X_m)\\
+        \forall n \neq m:\quad (X_n,X_m) = 0 \qquad n=m: \quad (X_n,X_m)=||X_m||^2
+    \end{gather*}
+    Отсюда следует, что:
+    \begin{gather*}
+        (\varphi, X_m) = \varphi_m\cdot ||X_m||^2 \qquad \Rightarrow  \qquad \varphi_m = \frac{(\varphi, x_m)}{||x_m||^2}\\
+        \varphi = \frac{
+            \int\displaylimits_0^l \varphi(x)X_m(x)dx
+        }{
+            \int\displaylimits_0^l X_m^2(x)dx
+        }
+    \end{gather*}
+\end{document}
