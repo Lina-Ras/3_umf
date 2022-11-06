@@ -12,117 +12,117 @@
 \subsection{Гиперболическое уравнение.}
 Гиперболическое уравнение второго порядка с двумя независимыми переменными может быть приведено к виду:
 \[
-    \pderivTwo{u}{x}{y} + Cu = f(x, y)
+	\pderivtwo{u}{x}{y} + Cu = f(x, y)
 \]
 Полагая $C$ = 0, имеем простейшее гиперболическое уравнение:
 \begin{equation}
-    \pderivTwo{u}{x}{y} = f(x, y)
+	\pderivtwo{u}{x}{y} = f(x, y)
 \end{equation}
 Найдем общее решение, интегрируя данное уравнение сперва по $x$, а затем по $y$. \\Заметим, что при интегрировании уравнения с частными производными по одной из независимых переменных возникающие константы в общем случае зависят от остальных переменных.
 \[
-    \pderiv{u}{y} = \int\limits_{0}^{x}f(\xi, y)\,d\xi + C(y)
+	\pderiv{u}{y} = \int\limits_{0}^{x}f(\xi, y)\,d\xi + C(y)
 \]
 \[
-    u(x,y) = \int\limits_{0}^{y}\int\limits_{0}^{x}f(\xi, \eta)\,d\xi\,d\eta + \int\limits_{0}^{y}C(\eta)\,d\eta + C_1(x)
+	u(x,y) = \int\limits_{0}^{y}\int\limits_{0}^{x}f(\xi, \eta)\,d\xi\,d\eta + \int\limits_{0}^{y}C(\eta)\,d\eta + C_1(x)
 \]
 Тогда общее решение будет иметь вид:
 \begin{equation}
-        u(x,y) = \int\limits_{0}^{y}\int\limits_{0}^{x}f(\xi, \eta)\,d\xi\,d\eta + C_1(x) + C_2(y),
+	u(x,y) = \int\limits_{0}^{y}\int\limits_{0}^{x}f(\xi, \eta)\,d\xi\,d\eta + C_1(x) + C_2(y),
 \end{equation}
 где $C_1(x)$, $C_2(y)$ - произвольные непрерывно дифференцируемые функции.\\
 Для \textit{однородного} уравнения
 \[
-    \pderivTwo{u}{x}{y} = 0
+	\pderivtwo{u}{x}{y} = 0
 \]
 общее решение определяется формулой:
 \[
-        u(x,y) = C_1(x) + C_2(y)
+	u(x,y) = C_1(x) + C_2(y)
 \]
 \subsection{Эллиптическое уравнение}
 Так как эллиптическое уравнение второго порядка с двумя независимыми переменными при определенных условиях может быть преобразовано к виду:
 \[
-    \pderivTwo{u}{x}{x} + \pderivTwo{u}{y}{y} + Cu = f,
+	\pderivtwo{u}{x}{x} + \pderivtwo{u}{y}{y} + Cu = f,
 \]
 то, полагая $C$ = 0, $f$ = 0, получим \textit{уравнение Лапласа}:
 \begin{equation}
-        \pderivTwo{u}{x}{x} + \pderivTwo{u}{y}{y} = 0,
+	\pderivtwo{u}{x}{x} + \pderivtwo{u}{y}{y} = 0,
 \end{equation}
 Пусть $f(z)$ - произвольная аналитическая функция комплексного переменного $z = x + iy$ в области $\Omega$. Выделим действительную и мнимую части функции $f(z)$, то есть представим её как:
 \[
-    f(z) = u(x, y) + iv(x,y)
+	f(z) = u(x, y) + iv(x,y)
 \]
 Для любой аналитической функции комплексного переменного
 выполнены \textit{условия Коши-Римана}:
 \begin{equation}
-    \begin{dcases}
-        \pderiv{v}{x} + \pderiv{u}{y} = 0,\\
-        \pderiv{u}{x} - \pderiv{v}{y} = 0
-    \end{dcases}
+	\begin{dcases}
+		\pderiv{v}{x} + \pderiv{u}{y} = 0, \\
+		\pderiv{u}{x} - \pderiv{v}{y} = 0
+	\end{dcases}
 \end{equation}
 Дифференцируя первое уравнение по $x$, второе по $y$, и вычитая из первого второе, имеем:
 \[
-    \pderivTwo{v}{x}{x} + \pderivTwo{v}{y}{y} = 0
+	\pderivtwo{v}{x}{x} + \pderivtwo{v}{y}{y} = 0
 \]
 Аналогично, дифференцируя первое по $y$, второе по $x$, и складывая их, имеем:
 \[
-    \pderivTwo{u}{x}{x} + \pderivTwo{u}{y}{y} = 0
+	\pderivtwo{u}{x}{x} + \pderivtwo{u}{y}{y} = 0
 \]
 Таким образом, действительная часть $u(x, y)$ и мнимая часть $v(x, y)$ аналитической функции комплексного переменного являются решениями уравнения Лапласа, т. е. простейшего эллиптического уравнения на плоскости.\\
 \underline{Важные примеры:}
-    \begin{enumerate}
-        \item $f(z) = e^z = e^{x+iy} = e^x(\cos{y}+i\sin{y})$.\\ Тогда функции $u(x,y) = e^x\cos{y}$ и $v(x,y) = e^x\sin{y}$ - частные решения уравнения Лапласа на плоскости.
-        \item $f(z) = \ln{\dfrac{1}{z-z_0}}$, где $z_0 = x_0 + iy_0 = const$\\
-        Запишем комплексное число $z-z_0$ как $z-z_0=re^{i\phi}$, где $r = \sqrt{(x-x_0)^2 + (y - y_0)^2},\\\phi = \arctg\dfrac{y-y_0}{x-x_0}.$\\
-        Тогда $f(z) = \ln{\dfrac{1}{r}} - i\arctg\dfrac{y-y_0}{x-x_0}.$\\
-        Следовательно, имеем частные решения уравнения Лапласа:
-        \[
-            u = \ln{\dfrac{1}{\sqrt{(x-x_0)^2 + (y - y_0)^2}}}
-        \]
-        \[
-            v = \arctg\dfrac{y-y_0}{x-x_0}
-        \]
-        Умножив $u$ на $\dfrac{1}{2\pi}$, получим \textit{фундаментальное решение уравнения Лапласа на плоскости $\R^2$}:
-        \begin{equation}
-            u(x, y) = G(M, M_0) \equiv \dfrac{1}{2\pi}\ln{\dfrac{1}{R_{MM_0}}} =  \dfrac{1}{2\pi}\ln{\dfrac{1}{\sqrt{(x-x_0)^2 + (y - y_0)^2}}},\; M \ne M_0.
-        \end{equation}
-        В случае трехмерного пространства $\R^3$ \textit{уравнение Лапласа} имеет вид:
-        \begin{equation}
-            \pderivTwo{u}{x}{x} + \pderivTwo{u}{y}{y} + \pderivTwo{u}{z}{z} = 0,
-        \end{equation}
-        Тогда \textit{фундаментальное решением уравнения Лапласа в $\R^3$} будет иметь вид:
-        \begin{equation}
-            u(x, y, z) = G(M, M_0) \equiv \dfrac{1}{4\pi R_{MM_0}} =  \dfrac{1}{4\pi{\sqrt{(x-x_0)^2 + (y - y_0)^2 + (z - z_0)^2}}},
-        \end{equation}
-        где $x_0, y_0, z_0$ - координаты фиксированной точки $M_0$.\\
-        Убедимся, что $u(x, y, z) = \dfrac{1}{4\pi R_{MM_0}}$ в самом деле является решением уравнения Лапласа в $\R^3$:
-        \[
-            \pderiv{u}{x} = \frac{\partial}{\partial x}\left(\dfrac{1}{4\pi R_{MM_0}}\right) =  - \dfrac{2(x-x_0)}{{8\pi(\sqrt{(x-x_0)^2 + (y - y_0)^2 + (z - z_0)^2}})^3} = - \dfrac{x-x_0}{4\pi R_{MM_0}^3}
-        \]
-        Аналогично:
-        \[
-            \pderiv{u}{y} = - \dfrac{y-y_0}{4\pi R_{MM_0}^3},\;
-            \pderiv{u}{z} = - \dfrac{z-z_0}{4\pi R_{MM_0}^3}.
-        \]
-        Тогда:
-        \[
-            \pderivTwo{u}{x}{x} = \dfrac{1}{4\pi} \left(-\dfrac{1}{R_{MM_0}^3} + \dfrac{3(x-x_0)^2}{R_{MM_0}^5}\right),
-        \]
-        \[
-            \pderivTwo{u}{y}{y} = \dfrac{1}{4\pi} \left(-\dfrac{1}{R_{MM_0}^3} + \dfrac{3(y-y_0)^2}{R_{MM_0}^5}\right),
-        \]
-        \[
-            \pderivTwo{u}{z}{z} = \dfrac{1}{4\pi} \left(-\dfrac{1}{R_{MM_0}^3} + \dfrac{3(z-z_0)^2}{R_{MM_0}^5}\right).
-        \]
-        Подставляя эти производные второго порядка в уравнение Лапласа для $\R^3$ получаем тождество:
-        \[
-            \dfrac{1}{4\pi}\left(-\dfrac{3}{R_{MM_0}^3} + \dfrac{3(x-x_0)^2 + (y-y_0)^2 + (z-z_0)^2)}{R_{MM_0}^5}\right) = 0,
-        \]
-        \[
-            \dfrac{1}{4\pi}\left(-\dfrac{3}{R_{MM_0}^3} + \dfrac{3}{R_{MM_0}^3}\right) = 0,
-        \]
-        \[
-            0 = 0.
-        \]
-        Следовательно, $u(x, y, z) = \dfrac{1}{4\pi R_{MM_0}}$ в самом деле является фундаментальным решением уравнения Лапласа во всех точках $\R^3$, кроме $M = M_0$.
-    \end{enumerate}
+\begin{enumerate}
+	\item $f(z) = e^z = e^{x+iy} = e^x(\cos{y}+i\sin{y})$.\\ Тогда функции $u(x,y) = e^x\cos{y}$ и $v(x,y) = e^x\sin{y}$ - частные решения уравнения Лапласа на плоскости.
+	\item $f(z) = \ln{\dfrac{1}{z-z_0}}$, где $z_0 = x_0 + iy_0 = const$\\
+	      Запишем комплексное число $z-z_0$ как $z-z_0=re^{i\phi}$, где $r = \sqrt{(x-x_0)^2 + (y - y_0)^2},\\\phi = \arctg\dfrac{y-y_0}{x-x_0}.$\\
+	      Тогда $f(z) = \ln{\dfrac{1}{r}} - i\arctg\dfrac{y-y_0}{x-x_0}.$\\
+	      Следовательно, имеем частные решения уравнения Лапласа:
+	      \[
+		      u = \ln{\dfrac{1}{\sqrt{(x-x_0)^2 + (y - y_0)^2}}}
+	      \]
+	      \[
+		      v = \arctg\dfrac{y-y_0}{x-x_0}
+	      \]
+	      Умножив $u$ на $\dfrac{1}{2\pi}$, получим \textit{фундаментальное решение уравнения Лапласа на плоскости $\R^2$}:
+	      \begin{equation}
+		      u(x, y) = G(M, M_0) \equiv \dfrac{1}{2\pi}\ln{\dfrac{1}{R_{MM_0}}} =  \dfrac{1}{2\pi}\ln{\dfrac{1}{\sqrt{(x-x_0)^2 + (y - y_0)^2}}},\; M \ne M_0.
+	      \end{equation}
+	      В случае трехмерного пространства $\R^3$ \textit{уравнение Лапласа} имеет вид:
+	      \begin{equation}
+		      \pderivtwo{u}{x}{x} + \pderivtwo{u}{y}{y} + \pderivtwo{u}{z}{z} = 0,
+	      \end{equation}
+	      Тогда \textit{фундаментальное решением уравнения Лапласа в $\R^3$} будет иметь вид:
+	      \begin{equation}
+		      u(x, y, z) = G(M, M_0) \equiv \dfrac{1}{4\pi R_{MM_0}} =  \dfrac{1}{4\pi{\sqrt{(x-x_0)^2 + (y - y_0)^2 + (z - z_0)^2}}},
+	      \end{equation}
+	      где $x_0, y_0, z_0$ - координаты фиксированной точки $M_0$.\\
+	      Убедимся, что $u(x, y, z) = \dfrac{1}{4\pi R_{MM_0}}$ в самом деле является решением уравнения Лапласа в $\R^3$:
+	      \[
+		      \pderiv{u}{x} = \frac{\partial}{\partial x}\left(\dfrac{1}{4\pi R_{MM_0}}\right) =  - \dfrac{2(x-x_0)}{{8\pi(\sqrt{(x-x_0)^2 + (y - y_0)^2 + (z - z_0)^2}})^3} = - \dfrac{x-x_0}{4\pi R_{MM_0}^3}
+	      \]
+	      Аналогично:
+	      \[
+		      \pderiv{u}{y} = - \dfrac{y-y_0}{4\pi R_{MM_0}^3},\;
+		      \pderiv{u}{z} = - \dfrac{z-z_0}{4\pi R_{MM_0}^3}.
+	      \]
+	      Тогда:
+	      \[
+		      \pderivtwo{u}{x}{x} = \dfrac{1}{4\pi} \left(-\dfrac{1}{R_{MM_0}^3} + \dfrac{3(x-x_0)^2}{R_{MM_0}^5}\right),
+	      \]
+	      \[
+		      \pderivtwo{u}{y}{y} = \dfrac{1}{4\pi} \left(-\dfrac{1}{R_{MM_0}^3} + \dfrac{3(y-y_0)^2}{R_{MM_0}^5}\right),
+	      \]
+	      \[
+		      \pderivtwo{u}{z}{z} = \dfrac{1}{4\pi} \left(-\dfrac{1}{R_{MM_0}^3} + \dfrac{3(z-z_0)^2}{R_{MM_0}^5}\right).
+	      \]
+	      Подставляя эти производные второго порядка в уравнение Лапласа для $\R^3$ получаем тождество:
+	      \[
+		      \dfrac{1}{4\pi}\left(-\dfrac{3}{R_{MM_0}^3} + \dfrac{3(x-x_0)^2 + (y-y_0)^2 + (z-z_0)^2)}{R_{MM_0}^5}\right) = 0,
+	      \]
+	      \[
+		      \dfrac{1}{4\pi}\left(-\dfrac{3}{R_{MM_0}^3} + \dfrac{3}{R_{MM_0}^3}\right) = 0,
+	      \]
+	      \[
+		      0 = 0.
+	      \]
+	      Следовательно, $u(x, y, z) = \dfrac{1}{4\pi R_{MM_0}}$ в самом деле является фундаментальным решением уравнения Лапласа во всех точках $\R^3$, кроме $M = M_0$.
+\end{enumerate}
 \end{document}

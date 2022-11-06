@@ -19,7 +19,7 @@ $$t>0, u|_{t=0}=\phi(M), \pderiv{u}{t}|_{t=0}=\psi(M), M(x,y,z)$$
 $$u(M,t)=u(r,t), r = r_{M,M_0}$$
 $v(r,t)=ru(r,t)$ - будет удовлетворять одном. волновому уравнению.
 \\ \\
-Запишем опреатор Лапласа в сферических координатах:
+Запишем оператор Лапласа в сферических координатах:
 $$\Delta u = \frac{1}{r^2}\pderiv{}{r}(r^2\pderiv{u}{r})+\frac{1}{r^2sin(\theta)}\pderiv{}{\theta}(sin(\theta)\pderiv{u}{\theta})+\frac{1}{r^2sin(\theta)}\frac{\partial^2v}{\psi^2}$$
 
 $$\Delta u = \frac{1}{r^2}\pderiv{}{r}(r^2\pderiv{u}{r})=\frac{\partial^2u}{r^2}+\frac{2}{r}\pderiv{u}{r}=\frac{1}{r}\frac{\partial^2}{\partial r^2}(ru)$$
@@ -27,4 +27,33 @@ $$\Delta u = \frac{1}{r^2}\pderiv{}{r}(r^2\pderiv{u}{r})=\frac{\partial^2u}{r^2}
 $$\pderiv{}{r}(ru)=u+r\pderiv{u}{r}$$
 $$\pderiv{^2}{r^2}(ru)=\pderiv{u}{r}+r\pderiv{^2u}{r^2}$$
 $$\frac{1}{r}\pderiv{^2}{r^2}(ru)=\frac{1}{a^2}\pderiv{^2u}{t^2}-\frac{1}{r}\frac{1}{a^2}\pderiv{^2}{t^2}(ru)$$
+
+Введем замену $v = r u $.
+$$\pderivt{v}{r} = \frac{1}{a^2} \pderivt{v}{t} $$
+
+Тогда из $u |_{t=0} = \varphi(r)$, $\pderivt{u}{t} |_{t=0} = \psi(r)$ получаем
+$$v |_{t=0} = r \varphi(r)$$
+$$\pderiv{v}{t}|_{t=0} = r \psi(r)$$
+
+Если $u$ ограничена в нуле, тогда $v(0, t)=0$.
+
+Решим одномерное волновое уравнение:
+
+$$v(r, t) = f_1\left(t - \frac{r}{a}\right) + f_2\left(t+ \frac{r}{a}\right)$$
+$$u(r, t) = \frac{1}{r} f_1 \left(t - \frac{r}{a}\right) + \frac{1}{r} f_2 \left(t+\frac{r}{a}\right)$$
+\begin{itemize}
+    \item \textbf{Расходящаяся сферическая волна}
+    $$u_1 = \frac{1}{r} f_1\left(t - \frac{r}{a}\right)$$
+    \item \textbf{Сходящаяся сферическая волна}
+    $$u_2 = \frac{1}{r} f_2\left(t+\frac{r}{a}\right)$$
+\end{itemize}
+Решением будет сумма сферических волн
+$$v(0, t) =0$$
+$$f_1(t) + f_2(t) = 0 \Rightarrow f_2(t) = -f_1(t) = f(t)$$
+
+$$u(r, t) = \frac{1}{r}f\left(t+\frac{r}{a}\right) - \frac{1}{r} f\left(t-\frac{r}{a}\right)  \xrightarrow[r \to 0]{} \frac{2}{a} f'(t)$$
+
+$$\boxed{u(0, t) = \frac{2}{a} f'(t)} \label{eq:2.9.1}$$
+
+
 \end{document}

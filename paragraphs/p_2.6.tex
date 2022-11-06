@@ -11,83 +11,83 @@
 \section{Метод Дюамеля для решения задачи Коши для неоднородного волнового уравнения}
 
 \begin{equation}
-    \label{eq:2.6.1}
-    \frac{1}{a^2}\pderiv{^2u}{t^2} = \pderiv{^2u}{x^2} + f(x, t), -\infty \leq x \leq +\infty, t > 0
+	\label{eq:2.6.1}
+	\frac{1}{a^2}\pderiv{^2u}{t^2} = \pderiv{^2u}{x^2} + f(x, t), -\infty \leq x \leq +\infty, t > 0
 \end{equation}
 \begin{equation}
-    \label{eq:2.6.2}
-    u|_{t=0} = \phi(x), -\infty \leq x \leq +\infty
+	\label{eq:2.6.2}
+	u|_{t=0} = \phi(x), -\infty \leq x \leq +\infty
 \end{equation}
 \begin{equation}
-    \label{eq:2.6.3}
-    \pderiv{u}{t}|_{t=0}=\psi(x), -\infty \leq x \leq +\infty
+	\label{eq:2.6.3}
+	\pderiv{u}{t}|_{t=0}=\psi(x), -\infty \leq x \leq +\infty
 \end{equation}
 
-Для решение задач \eqref{eq:2.6.1}-\eqref{eq:2.6.3} построим вспомогательную задачу: 
+Для решение задач \eqref{eq:2.6.1}-\eqref{eq:2.6.3} построим вспомогательную задачу:
 \begin{equation}
-    \label{eq:2.6.4}
-    \frac{1}{a^2}\pderiv{^2w_ff}{t^2}=\pderiv{^2w_f}{x^2}, -\infty \leq x \leq +\infty, t > \tau,
+	\label{eq:2.6.4}
+	\frac{1}{a^2}\pderiv{^2w_ff}{t^2}=\pderiv{^2w_f}{x^2}, -\infty \leq x \leq +\infty, t > \tau,
 \end{equation}
 \begin{equation}
-    \label{eq:2.6.5}
-    w_f(x, \tau, \tau) = 0, t = \tau
+	\label{eq:2.6.5}
+	w_f(x, \tau, \tau) = 0, t = \tau
 \end{equation}
 \begin{equation}
-    \label{eq:2.6.6}
-    \pderiv{w_f}{t}(x, \tau, \tau) = f(x, \tau), -\infty \leq x \leq +\infty
+	\label{eq:2.6.6}
+	\pderiv{w_f}{t}(x, \tau, \tau) = f(x, \tau), -\infty \leq x \leq +\infty
 \end{equation}
-Откуда 
+Откуда
 $$
-    w_f(x, t, \tau)=w_f(x, t-\tau,\tau) = \frac{1}{2a}\int_{x-a(t-\tau)}^{x+a(t-\tau)}f(\xi, \tau)d\xi
+	w_f(x, t, \tau)=w_f(x, t-\tau,\tau) = \frac{1}{2a}\int_{x-a(t-\tau)}^{x+a(t-\tau)}f(\xi, \tau)d\xi
 $$
 Если рассмотрим \eqref{eq:2.6.1}-\eqref{eq:2.6.3} для однородного уравнени, то решение можно записать как:
 \begin{equation}
-    u(x, t)=\pderiv{w_\phi(x, t, 0)}{t} + w_\psi(x, t, 0)
+	u(x, t)=\pderiv{w_\phi(x, t, 0)}{t} + w_\psi(x, t, 0)
 \end{equation}
 
-$w_\phi(x, t, 0)$ - решение задачи \eqref{eq:2.6.4}-\eqref{eq:2.6.6}, 
+$w_\phi(x, t, 0)$ - решение задачи \eqref{eq:2.6.4}-\eqref{eq:2.6.6},
 если $f = \phi$ и $\tau = 0$.
-$w_phi(x, t, 0) = \frac{1}{2a}\int_{x-at}^{x+at}\phi(\xi)d\xi$. 
+$w_phi(x, t, 0) = \frac{1}{2a}\int_{x-at}^{x+at}\phi(\xi)d\xi$.
 $w_psi(x, t, 0) = \frac{1}{2a}\int_{x-at}^{x+at}\psi(\xi)d\xi$
-Тогда 
+Тогда
 \begin{equation}
-    u(x, t) = \frac{\phi(x+at) + \phi(x - at)}{2} + \frac{1}{2a}\int_{x - at}{x+at}\psi(\xi)d\xi
+	u(x, t) = \frac{\phi(x+at) + \phi(x - at)}{2} + \frac{1}{2a}\int_{x - at}{x+at}\psi(\xi)d\xi
 \end{equation}
 
 \begin{theorem}
-    Решение задачи  \eqref{eq:2.6.1} -  \eqref{eq:2.6.3} с однородными начальными условиями представляется в виде
-    \begin{equation}
-        u(x, t) = a^2\int_0^tw_f(x, t, \tau)d\tau
-    \end{equation}
+	Решение задачи  \eqref{eq:2.6.1} -  \eqref{eq:2.6.3} с однородными начальными условиями представляется в виде
+	\begin{equation}
+		u(x, t) = a^2\int_0^tw_f(x, t, \tau)d\tau
+	\end{equation}
 \end{theorem}
 \begin{proof}
-   $$ 
-   \pderiv{u}{t}=a^2w_f(x, t, t) + a^2 \int_0^t\pderiv{w_f(x,t,\tau)}{t}d\tau
-   $$
-   Но из задачи для $w_f$ следует, что $w_f(x, t, t) = 0$. Тогда получаем, что 
-   $ \pderiv{u}{t} = a^2\int_0^t\pderiv{w_f(x, t, \tau)}{t}d\tau$
-   $$
-   \pderiv{^2u}{t^2}=a^2\pderiv{w_f(x, t, t)}{t} + a^2\int_0^t\pderiv{^2w_f(x, t, \tau)}{t^2}d\tau =
-   a^2f(x, t) + a^2\int_0^t\pderiv{^2w_f(x, t, \tau)}{t^2}d\tau
-   $$
-   $$
-   \pderiv{^2u}{x^2} = a^2\int_0^t\pderiv{^2w_f(x, t, \tau)}{x^2}d\tau
-   $$
-   Учитывая \eqref{eq:2.6.4}:
-   $$
-   \pderiv{^2u}{x^2} = \int_0^t\pderiv{^2w_f(x, t, \tau)}{t^2}d\tau =  a^2\int_0^t\pderiv{^2w_f(x, t, \tau)}{x^2}d\tau
-   $$
+	$$
+		\pderiv{u}{t}=a^2w_f(x, t, t) + a^2 \int_0^t\pderiv{w_f(x,t,\tau)}{t}d\tau
+	$$
+	Но из задачи для $w_f$ следует, что $w_f(x, t, t) = 0$. Тогда получаем, что
+	$ \pderiv{u}{t} = a^2\int_0^t\pderiv{w_f(x, t, \tau)}{t}d\tau$
+	$$
+		\pderiv{^2u}{t^2}=a^2\pderiv{w_f(x, t, t)}{t} + a^2\int_0^t\pderiv{^2w_f(x, t, \tau)}{t^2}d\tau =
+		a^2f(x, t) + a^2\int_0^t\pderiv{^2w_f(x, t, \tau)}{t^2}d\tau
+	$$
+	$$
+		\pderiv{^2u}{x^2} = a^2\int_0^t\pderiv{^2w_f(x, t, \tau)}{x^2}d\tau
+	$$
+	Учитывая \eqref{eq:2.6.4}:
+	$$
+		\pderiv{^2u}{x^2} = \int_0^t\pderiv{^2w_f(x, t, \tau)}{t^2}d\tau =  a^2\int_0^t\pderiv{^2w_f(x, t, \tau)}{x^2}d\tau
+	$$
 
 \end{proof}
 Решение задачи \eqref{eq:2.6.1} - \eqref{eq:2.6.3}:
 $$
-u(x, t) = \pderiv{w_\phi(x, t, 0)}{t} + w_f(x, t, 0) + a^2\int_0^tw_f(x, t, \tau)d\tau
+	u(x, t) = \pderiv{w_\phi(x, t, 0)}{t} + w_f(x, t, 0) + a^2\int_0^tw_f(x, t, \tau)d\tau
 $$
 $$
-w_f(x, t, \tau)=\frac{1}{2a}\int_{x - a(t-\tau)}^{x+a(t-\tau)}f(\xi, \tau)d\xi
+	w_f(x, t, \tau)=\frac{1}{2a}\int_{x - a(t-\tau)}^{x+a(t-\tau)}f(\xi, \tau)d\xi
 $$
 $$
-u(x, t) = \frac{\phi(x + at) + \phi(x - at)}{2} + \frac{1}{2a}\int_{x - at}^{x + at}\psi(\xi)d\xi + \frac{a}{2}\int_0^{t}\int_{x - a(t - \tau)}^{x + a(t - \tau)}f(\xi,\tau)d\xi d\tau
+	u(x, t) = \frac{\phi(x + at) + \phi(x - at)}{2} + \frac{1}{2a}\int_{x - at}^{x + at}\psi(\xi)d\xi + \frac{a}{2}\int_0^{t}\int_{x - a(t - \tau)}^{x + a(t - \tau)}f(\xi,\tau)d\xi d\tau
 $$
 
 \end{document}
