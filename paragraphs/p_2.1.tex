@@ -9,61 +9,61 @@
 \begin{document}
 \section{Корректная постановка задачи Коши}
 \begin{definition}
-Задача Коши для уравнения второго порядка с двумя независимыми переменными в области $D\in\R^2$ формулируется как:
-\begin{equation} \label{eq:2.1.1}
-    L(u) \equiv a_{11}\pderivTwo{u}{x}{x} + 2a_{12}\pderivTwo{u}{x}{y} + a_{22}\pderivTwo{u}{y}{y} + a\pderiv{u}{x} + b\pderiv{u}{y} + cu = f,
-\end{equation}
-\begin{equation} \label{eq:2.1.2}
-    u\Bigr|_{(x, y)\in\textup{Г}} = \phi(x, y),\;\; \pderiv{u}{\Vec{n}}\Bigr|_{(x, y)\in\textup{Г}} = \psi(x, y),
-\end{equation}
-где $D$ - плоская область в $R^2$, Г - линия внутри области $D$, $u \in C^2(D)$, Г $\in C^2$, $\phi$ и $\psi$ - функции, заданные на линии Г.
+	Задача Коши для уравнения второго порядка с двумя независимыми переменными в области $D\in\R^2$ формулируется как:
+	\begin{equation} \label{eq:2.1.1}
+		L(u) \equiv a_{11}\pderivtwo{u}{x}{x} + 2a_{12}\pderivtwo{u}{x}{y} + a_{22}\pderivtwo{u}{y}{y} + a\pderiv{u}{x} + b\pderiv{u}{y} + cu = f,
+	\end{equation}
+	\begin{equation} \label{eq:2.1.2}
+		u\Bigr|_{(x, y)\in\textup{Г}} = \phi(x, y),\;\; \pderiv{u}{\Vec{n}}\Bigr|_{(x, y)\in\textup{Г}} = \psi(x, y),
+	\end{equation}
+	где $D$ - плоская область в $R^2$, Г - линия внутри области $D$, $u \in C^2(D)$, Г $\in C^2$, $\phi$ и $\psi$ - функции, заданные на линии Г.
 \end{definition}
 \begin{center}
-\begin{tikzpicture} [scale=1.5]
-    \draw (-0.1, -0.1) node {0};
-    \draw (1.65, 1.1) node {$\Vec{n}$};
-    \draw (1.25, 1.65) node {$D$};
-    \draw (2.4, 1.3) node {Г};
-    \draw [<->,thick] (0,2) node (yaxis) [above] {$y$}
-        |- (3.5,0) node (xaxis) [right] {$x$};
-    \draw plot[smooth, tension=.7] coordinates {(0.5,0.5) (0.25, 1) (0.75, 1.8) (1.25, 2) (2.5, 1.9) (3, 1.4) (2.9, -0.25) (1.5, -0.1) (0.5,0.5)};
-    \draw plot[smooth, tension=.7] coordinates {(0.25, 1) (1.5, 0.75) (3, 1.4)};
-    \draw[->, thick](1.5,0.75) -- (1.4, 1.2);
-\end{tikzpicture}
+	\begin{tikzpicture} [scale=1.5]
+		\draw (-0.1, -0.1) node {0};
+		\draw (1.65, 1.1) node {$\Vec{n}$};
+		\draw (1.25, 1.65) node {$D$};
+		\draw (2.4, 1.3) node {Г};
+		\draw [<->,thick] (0,2) node (yaxis) [above] {$y$}
+		|- (3.5,0) node (xaxis) [right] {$x$};
+		\draw plot[smooth, tension=.7] coordinates {(0.5,0.5) (0.25, 1) (0.75, 1.8) (1.25, 2) (2.5, 1.9) (3, 1.4) (2.9, -0.25) (1.5, -0.1) (0.5,0.5)};
+		\draw plot[smooth, tension=.7] coordinates {(0.25, 1) (1.5, 0.75) (3, 1.4)};
+		\draw[->, thick](1.5,0.75) -- (1.4, 1.2);
+	\end{tikzpicture}
 \end{center}
 Введём следующие пространства функций:
 \begin{enumerate}
-    \item $V_1$(Г) - пространство начальных функций $\phi$.
-    \item $V_2$(Г) - пространство начальных функций $\psi$.
-    \item $V$(D) - пространство  функций $u$, в котором отыскивается решение задачи (\ref{eq:2.1.1}), (\ref{eq:2.1.2}).
+	\item $V_1$(Г) - пространство начальных функций $\phi$.
+	\item $V_2$(Г) - пространство начальных функций $\psi$.
+	\item $V$(D) - пространство  функций $u$, в котором отыскивается решение задачи (\ref{eq:2.1.1}), (\ref{eq:2.1.2}).
 \end{enumerate}
 Для классических решений: $V(D) \in C^2(D)$.\\
 Будем предполагать, что пространства $V_1$, $V_2$, $V$ являются метрическими, то есть наделены расстояниями $\rho_1(\phi_1, \phi_2)$, $\rho_2(\psi_1, \psi_2)$, $\rho_3(u_1, u_2)$ между двумя функциями в соответственно $V_1$, $V_2$, $V$.\\
 В случае нормированных линейных пространств:
 \[
-    \rho_1(\phi_1, \phi_2) = \|\phi_1 - \phi_2\|_{V_1},\;\;\;
-    \rho_2(\psi_1, \psi_2) = \|\psi_1 - \psi_2\|_{V_2},\;\;\;
-    \rho_3(u_1, u_2) = \|u_1 - u_2\|_V.
+	\rho_1(\phi_1, \phi_2) = \|\phi_1 - \phi_2\|_{V_1},\;\;\;
+	\rho_2(\psi_1, \psi_2) = \|\psi_1 - \psi_2\|_{V_2},\;\;\;
+	\rho_3(u_1, u_2) = \|u_1 - u_2\|_V.
 \]
 \begin{definition}
-Рассмотрим две задачи Коши с различными начальными функциями:
-\begin{equation}
-    L(u_i) = f,
-\end{equation}
-\begin{equation}
-    u_i\Bigr|_{(x, y)\in\textup{Г}} = \phi_i,\;\;\;\pderiv{u_i}{\Vec{n}}\Bigr|_{(x, y)\in\textup{Г}} = \psi_i,\;\;\; i = 1, 2
-\end{equation}
-Решение задачи (\ref{eq:2.1.1}), (\ref{eq:2.1.2}) называется \textit{устойчивым по начальным данным}, если:
-\begin{equation}
-    \forall\mathcal{E}>0\;\exists\delta>0: \rho_1(\phi_1, \phi_2) < \delta,\; \rho_2(\psi_1, \psi_2) < \delta \implies \rho_3(u_1, u_2) < \mathcal{E}
-\end{equation}
+	Рассмотрим две задачи Коши с различными начальными функциями:
+	\begin{equation}
+		L(u_i) = f,
+	\end{equation}
+	\begin{equation}
+		u_i\Bigr|_{(x, y)\in\textup{Г}} = \phi_i,\;\;\;\pderiv{u_i}{\Vec{n}}\Bigr|_{(x, y)\in\textup{Г}} = \psi_i,\;\;\; i = 1, 2
+	\end{equation}
+	Решение задачи (\ref{eq:2.1.1}), (\ref{eq:2.1.2}) называется \textit{устойчивым по начальным данным}, если:
+	\begin{equation}
+		\forall\mathcal{E}>0\;\exists\delta>0: \rho_1(\phi_1, \phi_2) < \delta,\; \rho_2(\psi_1, \psi_2) < \delta \implies \rho_3(u_1, u_2) < \mathcal{E}
+	\end{equation}
 \end{definition}
 \begin{definition}
-Задача (\ref{eq:2.1.1}), (\ref{eq:2.1.2}) - \textit{корректно поставленная}, если $\forall\phi\in{V_1},\; \forall\psi\in{V_2}$:
-\begin{enumerate}
-    \item $\exists u\in{V}$.
-    \item Решение $u$ единственно в $V$.
-    \item Решение $u$ устойчиво по начальным данным.
-\end{enumerate}
+	Задача (\ref{eq:2.1.1}), (\ref{eq:2.1.2}) - \textit{корректно поставленная}, если $\forall\phi\in{V_1},\; \forall\psi\in{V_2}$:
+	\begin{enumerate}
+		\item $\exists u\in{V}$.
+		\item Решение $u$ единственно в $V$.
+		\item Решение $u$ устойчиво по начальным данным.
+	\end{enumerate}
 \end{definition}
 \end{document}

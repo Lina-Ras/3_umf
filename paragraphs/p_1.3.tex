@@ -11,62 +11,62 @@
 \section{ДУ с частными производными 1-ого порядка}
 Решим однородное ДУ 1-ого порядка с $n$ независимыми переменными:
 \begin{equation}
-    \label{eq:1.3.1}
-    \sum_{i=1}^n a^{(i)}(x)\pderiv{u}{x_i} = 0
+	\label{eq:1.3.1}
+	\sum_{i=1}^n a^{(i)}(x)\pderiv{u}{x_i} = 0
 \end{equation}
 
 $a^{(i)}(x)$ определены и непрерывны вместе с первыми производными в
 окрестности точки $x_0^{(0)}$ и не обращаются одновременно в $0$ в этой точке.
 \[
-\left((a^{(1)}(x^{(0)}))^2 + (a^{(2)}(x^{(0)}))^2 + \dots + (a^{(n)}(x^{(0)}))^2 \neq 0\right)
+	\left((a^{(1)}(x^{(0)}))^2 + (a^{(2)}(x^{(0)}))^2 + \dots + (a^{(n)}(x^{(0)}))^2 \neq 0\right)
 \]
 Полагаем, что $a^{(n)}(x^{(0)})\neq 0$
 В соответсвтии с (\ref*{eq:1.3.1}) запишем систему ДУ:
 \begin{equation}
-    \label{eq:1.3.2}
-    \frac{dx_1}{a^{(1)}} = \frac{dx_2}{a^{(2)}} = \dots = \frac{dx_n}{a^{(n)}}
+	\label{eq:1.3.2}
+	\frac{dx_1}{a^{(1)}} = \frac{dx_2}{a^{(2)}} = \dots = \frac{dx_n}{a^{(n)}}
 \end{equation}
 Систему (\ref*{eq:1.3.2}) перепишем в виде (n-1) уравнения:
 \begin{equation}
-    \label{eq:1.3.3}
-    dx_1 = \frac{a^{(1)}}{a^{(n)}}dx_n, \:
-    dx_2 = \frac{a^{(2)}}{a^{(n)}}dx_n, 
-    \dots,
-    dx_{n-1} = \frac{a^{(n-1)}}{a^{(n)}}dx_n   
+	\label{eq:1.3.3}
+	dx_1 = \frac{a^{(1)}}{a^{(n)}}dx_n, \:
+	dx_2 = \frac{a^{(2)}}{a^{(n)}}dx_n,
+	\dots,
+	dx_{n-1} = \frac{a^{(n-1)}}{a^{(n)}}dx_n
 \end{equation}
 Данная система имеет (n-1) независимый интеграл.
 \begin{theorem}
-    Всякий интеграл системы (\ref*{eq:1.3.3}) является решением системы (\ref*{eq:1.3.1})
+	Всякий интеграл системы (\ref*{eq:1.3.3}) является решением системы (\ref*{eq:1.3.1})
 \end{theorem}
 \begin{proof}
-    Пусть $\psi(x)$ -- интеграл системы (\ref*{eq:1.3.3}). Тогда $d\psi \equiv 0$,
-    т.е.
-    \begin{gather*}
-        d\psi = \pderiv{\psi}{x_1}dx_1 + \dots + \pderiv{\psi}{x_n}dx_n = [\ref*{eq:1.3.3}] = 
-        \pderiv{\psi}{x_1}\frac{a^{(1)}}{a^{(n)}}dx_n + \dots 
-        + \pderiv{\psi}{x_{n-1}}\frac{a^{(n-1)}}{a^{(n)}}dx_n + \pderiv{\psi}{x_n}dx_n = \\
-        = \left(\sum_{i=1}^{n}a^{(i)}\pderiv{\psi}{x_i}\right)\frac{dx_n}{a^{(n)}} \equiv 0\\
-        \sum_{i=1}^{n}a^{(i)}\pderiv{\psi}{x_i} = 0
-    \end{gather*}
+	Пусть $\psi(x)$ -- интеграл системы (\ref*{eq:1.3.3}). Тогда $d\psi \equiv 0$,
+	т.е.
+	\begin{gather*}
+		d\psi = \pderiv{\psi}{x_1}dx_1 + \dots + \pderiv{\psi}{x_n}dx_n = [\ref*{eq:1.3.3}] =
+		\pderiv{\psi}{x_1}\frac{a^{(1)}}{a^{(n)}}dx_n + \dots
+		+ \pderiv{\psi}{x_{n-1}}\frac{a^{(n-1)}}{a^{(n)}}dx_n + \pderiv{\psi}{x_n}dx_n = \\
+		= \left(\sum_{i=1}^{n}a^{(i)}\pderiv{\psi}{x_i}\right)\frac{dx_n}{a^{(n)}} \equiv 0\\
+		\sum_{i=1}^{n}a^{(i)}\pderiv{\psi}{x_i} = 0
+	\end{gather*}
 \end{proof}
 
 \begin{theorem}
-    Если $\psi_1, \psi_2, \dots, \psi_{n-1}$ является независимой интегриралами системы (\ref*{eq:1.3.3}),
-    то функция $F(\psi_1, \psi_2, \dots, \psi_{n-1})$ -- непрерывная и имеющая непрерывную
-    производную по $\psi_i$ -- является решением (\ref*{eq:1.3.1})
+	Если $\psi_1, \psi_2, \dots, \psi_{n-1}$ является независимой интегриралами системы (\ref*{eq:1.3.3}),
+	то функция $F(\psi_1, \psi_2, \dots, \psi_{n-1})$ -- непрерывная и имеющая непрерывную
+	производную по $\psi_i$ -- является решением (\ref*{eq:1.3.1})
 \end{theorem}
 \begin{proof}
-    \begin{gather*}
-        \sum_{i=1}^n = a^{(i)}\pderiv{F}{x_i} =
-        \sum_{i=1}^n a^{(i)} \sum_{j=1}^{n-1}\pderiv{F}{\psi_j}\pderiv{\psi_j}{x_i} =
-        \sum_{j=1}^{n-1} \sum_{i=1}^n a^{(i)} \pderiv{\psi_j}{x_i} = 0
-    \end{gather*}
-    $F(\psi_1, \psi_2,\dots,\psi_n)$ называетсяя \textit{общим решением} уравнения (\ref*{eq:1.3.1})
+	\begin{gather*}
+		\sum_{i=1}^n = a^{(i)}\pderiv{F}{x_i} =
+		\sum_{i=1}^n a^{(i)} \sum_{j=1}^{n-1}\pderiv{F}{\psi_j}\pderiv{\psi_j}{x_i} =
+		\sum_{j=1}^{n-1} \sum_{i=1}^n a^{(i)} \pderiv{\psi_j}{x_i} = 0
+	\end{gather*}
+	$F(\psi_1, \psi_2,\dots,\psi_n)$ называетсяя \textit{общим решением} уравнения (\ref*{eq:1.3.1})
 \end{proof}
 Чтобы найти общее решение уравнения (\ref*{eq:1.3.1}) необходимо,
 \begin{enumerate}
-    \item Используя полные дифференциалы записать систему (\ref*{eq:1.3.3})
-    \item Найти (n-1) независимый интеграл этой системы
-    \item Построить функцию от этих интегралов, которая будет являться достаточно гладкой
-\end{enumerate} 
+	\item Используя полные дифференциалы записать систему (\ref*{eq:1.3.3})
+	\item Найти (n-1) независимый интеграл этой системы
+	\item Построить функцию от этих интегралов, которая будет являться достаточно гладкой
+\end{enumerate}
 \end{document}

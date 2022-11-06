@@ -10,64 +10,64 @@
 \section{Замена независимых переменных в уравнениях 2-го порядка с двумя независимыми переменными.}
 Запишем уравнение:
 \begin{equation}\label{eq:1.6.1}
-a_{11}(x,y)\frac{\partial^2u}{x^2} + 2a_{12}(x,y)\frac{\partial^2u}{\partial x \partial y} + a_{22}(x,y)\frac{\partial^2u}{y^2} + a(x,y)\pderiv{u}{x} +b(x,y)\pderiv{u}{y}+c(x,y) = f(x,y) \end{equation} \\
+	a_{11}(x,y)\frac{\partial^2u}{x^2} + 2a_{12}(x,y)\frac{\partial^2u}{\partial x \partial y} + a_{22}(x,y)\frac{\partial^2u}{y^2} + a(x,y)\pderiv{u}{x} +b(x,y)\pderiv{u}{y}+c(x,y) = f(x,y) \end{equation} \\
 Рассмотрим этo уравнение в области $\Omega \subset \R^2$, \ \ $a_{ij} \in C^2(\Omega)$ \\
-\\ Введём замену: 
+\\ Введём замену:
 $$\begin{dcases}\xi = \phi(x,y) \\ \eta = \psi(x,y)\end{dcases}$$
 \\ \\
 $$\begin{vmatrix}
-\phi_x \ & \ \phi_y
-\\
-\psi_x \ & \ \psi_y
-\end{vmatrix} \ne 0, \ \ \phi(x,y), \psi(x,y) \ \in C^2(\Omega)
+		\phi_x \  & \ \phi_y
+		\\
+		\psi_x \  & \ \psi_y
+	\end{vmatrix} \ne 0, \ \ \phi(x,y), \psi(x,y) \ \in C^2(\Omega)
 $$ \\
 $
-    u_x = u_\xi\xi_{x}+u_\eta\eta_x 
+	u_x = u_\xi\xi_{x}+u_\eta\eta_x
 $  \\$
-    u_{xx} = u_{\xi\xi}(\xi_x)^2 + 2u_{\xi\eta}\xi_x\eta_x+u_{\eta\eta}(\eta_x^2)+u_\xi\xi_{xx}+u_\eta\eta_{xx}
+u_{xx} = u_{\xi\xi}(\xi_x)^2 + 2u_{\xi\eta}\xi_x\eta_x+u_{\eta\eta}(\eta_x^2)+u_\xi\xi_{xx}+u_\eta\eta_{xx}
 $\\ $
-    u_y=u_\xi\xi_y+u_\eta\eta_y
+u_y=u_\xi\xi_y+u_\eta\eta_y
 $\\
 $u_{yy}=u_{\xi\xi}(\xi_y)^2+2u_{\xi\eta}\eta_y+u_{\eta\eta}(\eta_y)^2+u_\xi\xi_{yy}+u_\eta\eta_{yy}$\\
 $u_{xy}=u_{\xi\xi}\xi_{x}\xi_y+u_{\xi\eta}(\xi_x\eta_y+\xi_y\eta_x)+u_{\eta\eta}\eta_x\eta_y+u_\xi\xi_{xy}+u_\eta\eta_{xy}$ \\
-\begin{equation}
-    \overline{a_{11}}u_{\xi\xi}+2\overline{a_{12}}u_{\xi\eta}+\overline{a_{22}}u_{\eta\eta}+\overline{a}u_{\xi}+\overline{b}u_\eta+cu=f 
-\end{equation}
-\begin{equation}
-\begin{dcases}
-\overline{a_{11}}=a_{11}\xi_x^2+2a_{12}\xi_{12}\xi_x\xi_y+a_{22}(\xi_y)^2
-\\
-\overline{a_{22}}=a_{11}\eta_x^2+2a_{12}\eta_x\eta_y+a_{22}(\eta_y)^2
-\\
-\overline{a_{12}}=a_{11}\xi_x\eta_x+a_{12}(\xi_x\eta_y+\xi_y\eta_x)+a_{22}\xi_y\eta_y
-\end{dcases}
-\end{equation}
-Приведём к каноническому виду:
-\begin{equation}\label{1.6.4}
-    a_{11}(\pderiv{z}{x})^2+2a_{12}\pderiv{z}{x}\pderiv{z}{y}+a_{22}(\pderiv{z}{y})^2=0
-\end{equation}
-Решим квадратное уравнение:
-\begin{equation}\label{1.6.5}
-    a_{11}(dy)^2-2a_{12}dydx+a_{22}(dx)^2=0
-    \end{equation}
-\begin{equation}\label{1.6.6}
-    \begin{dcases}
-    \frac{dy}{dx} = \frac{a_{12}+\sqrt{a_{12}^2-a_{11}a_{22}}}{a_{11}}=\lambda_1(x,y) \\
-    \frac{dy}{dx} = \frac{a_{12}-\sqrt{a_{12}^2-a_{11}a_{22}}}{a_{11}}=\lambda_2(x,y)
-    \end{dcases}
-\end{equation}
-\textbf{Теорема:}\\
-\par Если $\phi(x,y)$ является первым интегралом (\ref{1.6.6}), то $z=\phi(x,y)$ - является решением уравнения (\ref{1.6.4}). \\ \\
-\textit{Доказательство:}\\
-\par Если $\phi(x,y)$ является первым интегралом (\ref{1.6.6}), то $\phi(x,y) \in C^1(\Omega), grad\phi \ne 0, \phi(x,y(x))=C$. Далее для фиксированного $M_0\in\Omega$ строим решение $y(x)$ уравнения $\frac{dy}{dx}=\lambda_1$, удовлетворяющего условию $y(x_0)=y_0$.\\
-\par По теореме Пикара-Линделёфа, такое решение существует в окрестности $x_0$. Тогда $\phi(x,y(x))=C_0$
-$$\pderiv{\phi}{x}+\pderiv{\phi}{y}\pderiv{y}{x}|_{y=y(x)}=0$$
-$$\pderiv{\phi}{x}+\pderiv{\phi}{y}\pderiv{y}{x}|_{M_0}=0$$
-Если в этой точке $\pderiv{\phi}{y}=0$, то $\pderiv{\phi}{x}=0$, а это противоречит условию 1-го интеграла. Значит в точке $M_0$:
-$$\frac{dy}{dx}=-\frac{\pderiv{\phi}{x}}{\pderiv{\phi}{y}}$$
-Из (\ref{1.6.5}):
-$$ a_{11}(\frac{dy}{dx})^2-2a_{12}\frac{dy}{dx}+a_{22}=0$$
-$$ a_{11}(\frac{\pderiv{\phi}{x}}{\pderiv{\phi}{y}})^2-2a_{12}\pderiv{\phi}{x}\pderiv{y}{\phi}+a_{22}=0$$
-$$ a_{11}(\pderiv{\phi}{x})^2+2a_{12}\pderiv{\phi}{x}\pderiv{y}{\phi}+a_{22}(\pderiv{\phi}{x})^2=0$$
-Результаты соответствуют (\ref{1.6.4}), а так как $z = \phi(x,y)$, это и будет решением (\ref{1.6.4}).
+	\begin{equation}
+		\overline{a_{11}}u_{\xi\xi}+2\overline{a_{12}}u_{\xi\eta}+\overline{a_{22}}u_{\eta\eta}+\overline{a}u_{\xi}+\overline{b}u_\eta+cu=f
+	\end{equation}
+	\begin{equation}
+		\begin{dcases}
+			\overline{a_{11}}=a_{11}\xi_x^2+2a_{12}\xi_{12}\xi_x\xi_y+a_{22}(\xi_y)^2
+			\\
+			\overline{a_{22}}=a_{11}\eta_x^2+2a_{12}\eta_x\eta_y+a_{22}(\eta_y)^2
+			\\
+			\overline{a_{12}}=a_{11}\xi_x\eta_x+a_{12}(\xi_x\eta_y+\xi_y\eta_x)+a_{22}\xi_y\eta_y
+		\end{dcases}
+	\end{equation}
+	Приведём к каноническому виду:
+	\begin{equation}\label{1.6.4}
+		a_{11}(\pderiv{z}{x})^2+2a_{12}\pderiv{z}{x}\pderiv{z}{y}+a_{22}(\pderiv{z}{y})^2=0
+	\end{equation}
+	Решим квадратное уравнение:
+	\begin{equation}\label{1.6.5}
+		a_{11}(dy)^2-2a_{12}dydx+a_{22}(dx)^2=0
+	\end{equation}
+	\begin{equation}\label{1.6.6}
+		\begin{dcases}
+			\frac{dy}{dx} = \frac{a_{12}+\sqrt{a_{12}^2-a_{11}a_{22}}}{a_{11}}=\lambda_1(x,y) \\
+			\frac{dy}{dx} = \frac{a_{12}-\sqrt{a_{12}^2-a_{11}a_{22}}}{a_{11}}=\lambda_2(x,y)
+		\end{dcases}
+	\end{equation}
+	\textbf{Теорема:}\\
+	\par Если $\phi(x,y)$ является первым интегралом (\ref{1.6.6}), то $z=\phi(x,y)$ - является решением уравнения (\ref{1.6.4}). \\ \\
+	\textit{Доказательство:}\\
+	\par Если $\phi(x,y)$ является первым интегралом (\ref{1.6.6}), то $\phi(x,y) \in C^1(\Omega), grad\phi \ne 0, \phi(x,y(x))=C$. Далее для фиксированного $M_0\in\Omega$ строим решение $y(x)$ уравнения $\frac{dy}{dx}=\lambda_1$, удовлетворяющего условию $y(x_0)=y_0$.\\
+	\par По теореме Пикара-Линделёфа, такое решение существует в окрестности $x_0$. Тогда $\phi(x,y(x))=C_0$
+	$$\pderiv{\phi}{x}+\pderiv{\phi}{y}\pderiv{y}{x}|_{y=y(x)}=0$$
+	$$\pderiv{\phi}{x}+\pderiv{\phi}{y}\pderiv{y}{x}|_{M_0}=0$$
+	Если в этой точке $\pderiv{\phi}{y}=0$, то $\pderiv{\phi}{x}=0$, а это противоречит условию 1-го интеграла. Значит в точке $M_0$:
+	$$\frac{dy}{dx}=-\frac{\pderiv{\phi}{x}}{\pderiv{\phi}{y}}$$
+	Из (\ref{1.6.5}):
+	$$ a_{11}(\frac{dy}{dx})^2-2a_{12}\frac{dy}{dx}+a_{22}=0$$
+	$$ a_{11}(\frac{\pderiv{\phi}{x}}{\pderiv{\phi}{y}})^2-2a_{12}\pderiv{\phi}{x}\pderiv{y}{\phi}+a_{22}=0$$
+	$$ a_{11}(\pderiv{\phi}{x})^2+2a_{12}\pderiv{\phi}{x}\pderiv{y}{\phi}+a_{22}(\pderiv{\phi}{x})^2=0$$
+	Результаты соответствуют (\ref{1.6.4}), а так как $z = \phi(x,y)$, это и будет решением (\ref{1.6.4}).
 \end{document}
