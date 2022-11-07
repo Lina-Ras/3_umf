@@ -17,10 +17,10 @@
 Пусть $C$ -- матрица преобразования, приводящая характеристический многочлен $$\sum_{i=1}^n\sum_{j=1}^n a_{ij} \xi_i \xi_j $$ к каноническому виду
 $$\sum_{i=1}^n a_i \mu_i^2.$$
 Введем в (\ref{eq:1.9.1}) замену
-$$x_i = \sum_i^n c_{ji}y_i,$$
+$$y_i = \sum_{j=1}^n c_{ji}x_i,$$
 где $c_{ji}$ -- элементы $C^T$.
 Вычислим производные
-$$\frac{\partial u}{\partial x_i} = \sum^n_{i=k}\frac{\partial u}{\partial y_k} \frac{\partial y_k}{\partial x_i} = \sum_{k=1}^n c_{ik} \frac{\partial u}{\partial y_k}$$
+$$\frac{\partial u}{\partial x_i} = \sum^n_{k=1}\frac{\partial u}{\partial y_k} \frac{\partial y_k}{\partial x_i} = \sum_{k=1}^n c_{ik} \frac{\partial u}{\partial y_k}$$
 $$\frac{\partial^2 u}{\partial x_i \partial x_j} = \sum^n_{k=1}\sum^n_{s=1} c_{ik} c_{js} \frac{\partial^2 u}{\partial y_k \partial y_s}$$
 и, подставив в исходное уравнение, получим
 \begin{equation}
