@@ -51,15 +51,15 @@ $a^{(i)}(x)$ определены и непрерывны вместе с пер
 \end{proof}
 
 \begin{theorem}
-	Если $\psi_1, \psi_2, \dots, \psi_{n-1}$ является независимой интегралами системы (\ref*{eq:1.3.3}),
+	Если $\psi_1, \psi_2, \dots, \psi_{n-1}$ являются независимыми интегралами системы (\ref*{eq:1.3.3}),
 	то функция $F(\psi_1, \psi_2, \dots, \psi_{n-1})$ -- непрерывная и имеющая непрерывную
 	производную по $\psi_i$ -- является решением (\ref*{eq:1.3.1})
 \end{theorem}
 \begin{proof}
 	\begin{gather*}
-		\sum_{i=1}^n = a^{(i)}\pderiv{F}{x_i} =
+		\sum_{i=1}^n a^{(i)}\pderiv{F}{x_i} =
 		\sum_{i=1}^n a^{(i)} \sum_{j=1}^{n-1}\pderiv{F}{\psi_j}\pderiv{\psi_j}{x_i} =
-		\sum_{j=1}^{n-1} \sum_{i=1}^n a^{(i)} \pderiv{\psi_j}{x_i} = 0
+		\sum_{j=1}^{n-1} \pderiv{F}{\psi_j}\sum_{i=1}^n a^{(i)} \pderiv{\psi_j}{x_i} = 0
 	\end{gather*}
 	$F(\psi_1, \psi_2,\dots,\psi_n)$ называетсяя \textit{общим решением} уравнения (\ref*{eq:1.3.1})
 \end{proof}

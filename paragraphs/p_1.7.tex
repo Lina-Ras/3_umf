@@ -1,4 +1,4 @@
-+\makeatletter
+\makeatletter
 \makeatother
 \documentclass[../main.tex]{subfiles}
 
@@ -8,55 +8,84 @@
 }
 \begin{document}
 \section{Приведение к каноническому виду ДУ 2-го порядка с 2 независимыми переменными}
+
 Запишем уравнение:
 \begin{equation}\label{eq:1.7.1}
-	a_{11}\frac{\partial^2u}{\partial x^2} + 2a_{12}\frac{\partial^2u}{\partial x \partial y} + a_{22}\frac{\partial^2u}{\partial y^2} + a_1\pderiv{u}{x} +a_2\pderiv{u}{y}+a_3 = f(x,u) \end{equation} \\
+	a_{11}\frac{\partial^2u}{\partial x^2} + 2a_{12}\frac{\partial^2u}{\partial x \partial y} + a_{22}\frac{\partial^2u}{\partial y^2} + a_1\pderiv{u}{x} +a_2\pderiv{u}{y}+a_3 = f(x,u)
+\end{equation}
+Запишем характеристическое уравнение в полных дифференциалах:
 \begin{equation}
-	a_{11}(dy)^2 - 2a_{12}dydx + a_22(dx)^2 = 0 \end{equation} \\
-$1)\;D = a_{12}^2 - a_{11}a_{22} > 0$
-$$\begin{dcases}\phi(x,y) = C_1 \\ \psi(x,y) = C_2\end{dcases}$$ удовлетворяют уравнению:
-\\ \\
-\begin{equation}\label{eq:1.7.2}
+	\label{eq:1.7.2}
+	a_{11}(dy)^2 - 2a_{12}dydx + a_{22}(dx)^2 = 0
+\end{equation}
+
+\subsection*{Гиперболический тип: }
+$D = a_{12}^2 - a_{11}a_{22} > 0$
+\\
+Уравнение (\ref*{eq:1.7.2}) имеет два первых интеграла:
+$$\begin{dcases}\phi(x,y) = C_1 \\ \psi(x,y) = C_2\end{dcases}$$
+Эти функции, согласно теореме (\ref{th:1.6.1}), являются решениями для уравнения:
+\begin{equation}\label{eq:1.7.3}
 	a_{11}(\pderiv{z}{x})^2 + 2a_{12}\pderiv{z}{x}\pderiv{z}{y} + a_{22}(\pderiv{z}{y})^2 = 0
 \end{equation}
 \\
-Замена:
+Введём замену:
 $$\begin{dcases}\xi = \phi(x,y) \\ \eta = \psi(x,y) \end{dcases}$$
-$\overline{a_{12}} = 0, \overline{a_{22}}=0$ \\
-$\overline{a_{12}}\frac{\partial^2u}{\partial\xi\partial\eta}=F(\xi, \eta, \pderiv{u}{\xi}, \pderiv{u}{\eta})$ \\
-$\overline{a_{12}}\neq0$ (при невырожденном преобр. порядок и тип ур-я сохраняются) \\
-$\frac{\partial^2u}{\partial\xi\partial\eta}=f(\xi, \eta, \pderiv{u}{\xi}, \pderiv{u}{\eta})$ \\
-\par Если ур-я $\phi(x,y) = C_1$ и $\psi(x,y)=C_2$ разрешимы относительно $y$, то $y=f_1(x, C_1), y=f_2(x, C_2)$ - два семейства линий, которые являются характеристическими линиями для уравнения гиперболического типа. \\
+$\overline{a_{12}} = 0, \quad \overline{a_{22}}=0, \quad \overline{a_{12}}\neq0$, т.к. тип уравнения и порядок сохраняется при невырожденном преобразовании\\
+$$\overline{a_{12}}\frac{\partial^2u}{\partial\xi\partial\eta}=F(\xi, \eta, \pderiv{u}{\xi}, \pderiv{u}{\eta})$$
 
-$2)\;D = 0.\; \phi(x, y) = C_1$
+\par Если уравнения $\phi(x,y) = C_1$ и $\psi(x,y)=C_2$ разрешимы относительно $y$, то $y=f_1(x, C_1), y=f_2(x, C_2)$ - два семейства линий, которые являются характеристическими линиями для уравнения гиперболического типа. \\
+
+\subsection*{Параболический тип: }
+$D = 0, \; \phi(x, y) = C_1$
+\\
+Введём замену:
 $$\begin{dcases}\xi = \phi(x,y) \\ \eta = \psi(x,y) \end{dcases}$$
-, где $\psi$ - достаточно гладкая функция и замены удовлетворяют:
+где $\psi(x,y)$ - достаточно гладкая функция и замены удовлетворяют условию:
 $$\begin{vmatrix}
 		\phi_x \  & \ \phi_y
 		\\
 		\psi_x \  & \ \psi_y
 	\end{vmatrix} \ne 0
 $$ \\
-$\phi$ удовлетворяет (\ref{eq:1.7.2}) $\implies \overline{a_{11}}=0.$ \\
+$\phi(x,y)$ удовлетворяет (\ref{eq:1.7.2}) $\implies \overline{a_{11}}=0$ и \\
 \begin{equation}
-	a_{11}(\phi_x)^2 + 2a_{12}\phi_x\phi_y + a_{22}(\phi_y)^2=0 \end{equation} \\
-\begin{equation}\label{eq:1.7.3}
-	a_{12}=\sqrt{a_{11}a_{22}} \implies (\sqrt{a_{11}}\phi_x + \sqrt{a_{22}}\phi_y)^2=0 \end{equation} \\
-$\overline{a_{12}}=a_{11}\phi_x\psi_x + a_{12}(\phi_x\psi_y + \psi_x\phi_y)+a_{22}\phi_y\psi_y = \sqrt{a_{11}}\psi_x + \sqrt{a_{22}}\psi_y) + \sqrt{a_{22}}\phi_y(\sqrt{a_{11}}\psi_x + \sqrt{a_{22}}\psi_y) = (\sqrt{a_{11}}\phi_x + \sqrt{a_{22}}\phi_y)(\sqrt{a_{11}}\psi_x + \sqrt{a_{22}}\psi_y) = 0$ \\
+	a_{11}(\phi_x)^2 + 2a_{12}\phi_x\phi_y + a_{22}(\phi_y)^2=0
+\end{equation}
 \\
-$\frac{\partial^2u}{\partial\eta^2} = F(\xi, \eta, \pderiv{u}{\xi}, \pderiv{u}{\eta})$\\
+Из того, что $D=0$:
+\begin{equation}\label{eq:1.7.4}
+	a_{12}=\sqrt{a_{11}a_{22}} \implies 
+	a_{11}(\phi_x)^2 + 2\sqrt{a_{11}a_{22}}\phi_x\phi_y + a_{22}(\phi_y)^2 =
+	(\sqrt{a_{11}}\phi_x + \sqrt{a_{22}}\phi_y)^2=0
+\end{equation}
+
+\begin{gather*}
+\overline{a_{12}}=a_{11}\phi_x\psi_x + a_{12}(\phi_x\psi_y + \psi_x\phi_y)+a_{22}\phi_y\psi_y = \\
+ = \sqrt{a_{11}}\phi_x(\sqrt{a_{11}}\psi_x + \sqrt{a_{22}}\psi_y) + \sqrt{a_{22}}\phi_y(\sqrt{a_{11}}\psi_x + \sqrt{a_{22}}\psi_y)= \\
+ = (\sqrt{a_{11}}\phi_x + \sqrt{a_{22}}\phi_y)(\sqrt{a_{11}}\psi_x + \sqrt{a_{22}}\psi_y) = 0
+\end{gather*}
+
+$$\frac{\partial^2u}{\partial\eta^2} = F(\xi, \eta, \pderiv{u}{\xi}, \pderiv{u}{\eta})$$\\
 Если $\phi(x,y)=C_1 \implies y = f_1(x, C_1)$ - одно семейство линий, называаемых характеристическими линиями для уравнения параболического типа.\\
-$3)\;D<0 \;\; \Phi$ - комплекснозначный 1-й интеграл. \\
-$\phi = Re\Phi, \; \psi = Im\Phi$\\
+
+\subsection*{Эллиптический тип:}
+$D<0, \;\; \Phi$ - комплекснозначный 1-й интеграл. \\
+$\phi(x,y) = Re\Phi, \; \psi(x,y) = Im\Phi$\\
 $z = \phi + i\psi$ - удовлетворяет (\ref{eq:1.7.2}) $\implies$\\
-$$\begin{dcases} \xi = \phi \\ \eta = \psi \end{dcases}$$\\
+$$\begin{dcases} \xi = \phi(x,y) \\ \eta = \psi(x,y) \end{dcases}$$\\
+Подстваим $z$ в (\ref*{eq:1.7.3}):
 \begin{equation}
-	a_{11}(\phi_x+i\psi_x)^2 + 2a_{12}(\phi_x + i\psi_x)(\phi_y + i\psi_y) + a_{22}(\phi_y + i\psi_y)^2 = 0 \end{equation} \\
-$a_{11}(\phi_x)^2 + 2a_{12}\phi_x\phi_y + a_{22}(\phi_y)^2 - (a_{11}(\psi_x)^2 + 2a_{12}\psi_x\psi_y + a_{22}(\psi_y)^2) + 2i(a_{11}\phi_x\psi_x + a_{12}(\phi_x\psi_y + \phi_y\psi_x)+a_{22}\phi_y\psi_y)=0$ \\
-$\xi = \phi(x,y),\; \eta = \psi(x,y)$ \\
-$\overline{a_{11}} - \overline{a{22}} + 2i\overline{a{12}} = 0$ \\
-$\overline{a_{11}}=\overline{a_{22}}, \; \overline{a_{12}}=0$ \\
-$\frac{\partial^2u}{\partial{\xi^2}} + \frac{\partial^2u}{\partial{\eta^2}} = F(\xi, \eta, u, \pderiv{u}{\xi}, \pderiv{u}{\eta})$ \\
+	a_{11}(\phi_x+i\psi_x)^2 + 2a_{12}(\phi_x + i\psi_x)(\phi_y + i\psi_y) + a_{22}(\phi_y + i\psi_y)^2 = 0
+\end{equation}
+\begin{gather*}
+\left(a_{11}(\phi_x)^2 + 2a_{12}\phi_x\phi_y + a_{22}(\phi_y)^2 \right) - \left(a_{11}(\psi_x)^2 + 2a_{12}\psi_x\psi_y + a_{22}(\psi_y)^2\right)+\\
+ + 2i(a_{11}\phi_x\psi_x + a_{12}(\phi_x\psi_y + \phi_y\psi_x)+a_{22}\phi_y\psi_y)=0 \\
+\xi = \phi(x,y),\; \eta = \psi(x,y)\\
+\overline{a_{11}} - \overline{a{_{22}}} + 2i\overline{a_{12}} = 0 \implies
+\overline{a_{11}}=\overline{a_{22}}, \; \overline{a_{12}}=0 \\
+\frac{\partial^2u}{\partial{\xi^2}} + \frac{\partial^2u}{\partial{\eta^2}} = F(\xi, \eta, u, \pderiv{u}{\xi}, \pderiv{u}{\eta})\\
+\end{gather*}
 Не имеет характеристических линий.
 \par Замечание 1. Т. к. производящая функция от 1-го интеграла - это 1-й интеграл, то приведение к каноническому виду неоднозначно.
 \par Замечание 2. Существование 1-х интегралов обеспечивается т. Ковалевской, но она доказывает существование локального, то есть в некоторой окрестности от точки, решения, а не решения на всей области. Следовательно, привести ДУ к каноническому виду можно в окрестности каждой точки, а не на всей области.
