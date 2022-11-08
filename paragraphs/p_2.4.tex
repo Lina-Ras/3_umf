@@ -11,7 +11,7 @@
 \section{Пример некорректно поставленой задачи по Адамару}
 \begin{large}
 	\begin{center}
-		$\pderivt{u}{t}-a^2\pderivt{u}{x}=0$, $\D=\{ -\infty<x<+\infty, |y|\leq T\rbrace$\\
+		$\pderivt{u}{x}+\pderivt{u}{y}=0$, $\D=\{ -\infty<x<+\infty, |y|\leq T\rbrace$\\
 		$ $\\
 		$ u|_{y=0} = \varphi(x)$, $\pderiv{u}{y}|_{y=0} = \psi(x)$, $ -\infty<x<+\infty$\\
 		$ $\\
@@ -59,13 +59,13 @@
 	$ $\\
 	Если выполняется $p(\varphi_1,\varphi_2)=|\varphi_1-\varphi_2|=0<\delta$\\
 	$ $\\
-	и $p(\psi_1,\psi_2)=|\psi_1-\psi_2|=e^{-\sqrt(n)}<\delta$, при $n>(\ln{\delta})^2$
+	и $p(\psi_1,\psi_2)=|\psi_1-\psi_2|=e^{-\sqrt{n}}<\delta$, при $n>(\ln{\delta})^2$
 \end{center}
 
 тогда должно выполняться равенство
 
 \begin{center}
-	$p(u_1,U_2)=|u_1-u_2|=\frac{1}{n}e^{-\sqrt{n}}sh(nT)<\epsilon$.
+	$p(u_1,u_2)=|u_1-u_2|=\frac{1}{n}e^{-\sqrt{n}}sh(nT)<\epsilon$.
 \end{center}
 
 Очевидно, что последнее неравенство не выполняется при достаточно больших n, так как \[\lim_{n \to \infty}{\frac{1}{n}}e^{-\sqrt{n}}sh(nT)=\infty\]\\

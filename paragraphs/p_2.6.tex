@@ -26,11 +26,11 @@
 Для решение задач \eqref{eq:2.6.1}-\eqref{eq:2.6.3} построим вспомогательную задачу:
 \begin{equation}
 	\label{eq:2.6.4}
-	\frac{1}{a^2}\pderiv{^2w_ff}{t^2}=\pderiv{^2w_f}{x^2}, -\infty \leq x \leq +\infty, t > \tau,
+	\frac{1}{a^2}\pderiv{^2w_f}{t^2}=\pderiv{^2w_f}{x^2}, -\infty \leq x \leq +\infty, t > \tau,
 \end{equation}
 \begin{equation}
 	\label{eq:2.6.5}
-	w_f(x, \tau, \tau) = 0, t = \tau
+	w_f(x, \tau, \tau) = 0, t = \tau, -\infty \leq x \leq +\infty
 \end{equation}
 \begin{equation}
 	\label{eq:2.6.6}
@@ -47,11 +47,11 @@ $$
 
 $w_\phi(x, t, 0)$ - решение задачи \eqref{eq:2.6.4}-\eqref{eq:2.6.6},
 если $f = \phi$ и $\tau = 0$.
-$w_phi(x, t, 0) = \frac{1}{2a}\int_{x-at}^{x+at}\phi(\xi)d\xi$.
-$w_psi(x, t, 0) = \frac{1}{2a}\int_{x-at}^{x+at}\psi(\xi)d\xi$
+$w_\phi(x, t, 0) = \frac{1}{2a}\int_{x-at}^{x+at}\phi(\xi)d\xi$.
+$w_\psi(x, t, 0) = \frac{1}{2a}\int_{x-at}^{x+at}\psi(\xi)d\xi$
 Тогда
 \begin{equation}
-	u(x, t) = \frac{\phi(x+at) + \phi(x - at)}{2} + \frac{1}{2a}\int_{x - at}{x+at}\psi(\xi)d\xi
+	u(x, t) = \frac{\phi(x+at) + \phi(x - at)}{2} + \frac{1}{2a}\int_{x - at}^{x+at}\psi(\xi)d\xi
 \end{equation}
 
 \begin{theorem}
@@ -81,7 +81,7 @@ $w_psi(x, t, 0) = \frac{1}{2a}\int_{x-at}^{x+at}\psi(\xi)d\xi$
 \end{proof}
 Решение задачи \eqref{eq:2.6.1} - \eqref{eq:2.6.3}:
 $$
-	u(x, t) = \pderiv{w_\phi(x, t, 0)}{t} + w_f(x, t, 0) + a^2\int_0^tw_f(x, t, \tau)d\tau
+	u(x, t) = \pderiv{w_\phi(x, t, 0)}{t} + w_\psi(x, t, 0) + a^2\int_0^tw_f(x, t, \tau)d\tau
 $$
 $$
 	w_f(x, t, \tau)=\frac{1}{2a}\int_{x - a(t-\tau)}^{x+a(t-\tau)}f(\xi, \tau)d\xi
