@@ -19,10 +19,10 @@ $$\begin{dcases}
 	\end{dcases} $$ \\
 Имеем:
 $$\begin{dcases}
-		F_1(x_1, x_2,..., x_n, \pderiv{u_1}{x_1},...,\pderiv{u_k}{x_n},..., \frac{\partial ^{m_1} u_k}{\partial x^{m_1}_n}) = 0, \\
-		F_2(x_1, x_2,..., x_n, \pderiv{u_1}{x_1},...,\pderiv{u_k}{x_n},..., \frac{\partial ^{m_2} u_k}{\partial x^{m_2}_n}) = 0, \\
+		F_1(x_1, x_2,..., x_n,u_1,u_2...,u_k, \pderiv{u_1}{x_1},...,\pderiv{u_k}{x_n},..., \frac{\partial ^{m_1} u_k}{\partial x^{m_1}_n}) = 0, \\
+		F_2(x_1, x_2,..., x_n,u_1,u_2...,u_k, \pderiv{u_1}{x_1},...,\pderiv{u_k}{x_n},..., \frac{\partial ^{m_2} u_k}{\partial x^{m_2}_n}) = 0, \\
 		........................................................                                                                 \\
-		F_k(x_1, x_2,..., x_n, \pderiv{u_1}{x_1},...,\pderiv{u_k}{x_n},..., \frac{\partial ^{m_k} u_k}{\partial x^{m_k}_n}) = 0, \\
+		F_k(x_1, x_2,..., x_n,u_1,u_2...,u_k, \pderiv{u_1}{x_1},...,\pderiv{u_k}{x_n},..., \frac{\partial ^{m_k} u_k}{\partial x^{m_k}_n}) = 0, \\
 	\end{dcases} $$ \\
 Записанная выше система является системой ДУ с частными производными.\\
 Рассмотрим линейную систему 1-го порядка относительно двух функций:\\
@@ -52,7 +52,7 @@ $$
 		b_{21}\pderiv{}{x} + b_{22}\pderiv{}{y} \  & \ c_{21}\pderiv{}{x} + c_{22}\pderiv{}{y}
 	\end{bmatrix}
 $$ \\ \\
-Рассмортим $L_0u$ и проведем замену : $\pderiv{}{x} \rightarrow \xi_1, \pderiv{}{y} \rightarrow \xi_2$. \\
+Рассмотрим $L_0u$ и проведем замену : $\pderiv{}{x} \rightarrow \xi_1, \pderiv{}{y} \rightarrow \xi_2$. \\
 \\ Запишем характеристическую матрицу
 $$
 	A = \begin{bmatrix}
