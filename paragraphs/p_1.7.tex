@@ -11,7 +11,7 @@
 
 Запишем уравнение:
 \begin{equation}\label{eq:1.7.1}
-	a_{11}\frac{\partial^2u}{\partial x^2} + 2a_{12}\frac{\partial^2u}{\partial x \partial y} + a_{22}\frac{\partial^2u}{\partial y^2} + a_1\pderiv{u}{x} +a_2\pderiv{u}{y}+a_3 = f(x,u)
+	a_{11}\frac{\partial^2u}{\partial x^2} + 2a_{12}\frac{\partial^2u}{\partial x \partial y} + a_{22}\frac{\partial^2u}{\partial y^2} + a_1\pderiv{u}{x} +a_2\pderiv{u}{y}+a_3u = f(x,u)
 \end{equation}
 Запишем характеристическое уравнение в полных дифференциалах:
 \begin{equation}
@@ -32,7 +32,7 @@ $$\begin{dcases}\phi(x,y) = C_1 \\ \psi(x,y) = C_2\end{dcases}$$
 Введём замену:
 $$\begin{dcases}\xi = \phi(x,y) \\ \eta = \psi(x,y) \end{dcases}$$
 $\overline{a_{12}} = 0, \quad \overline{a_{22}}=0, \quad \overline{a_{12}}\neq0$, т.к. тип уравнения и порядок сохраняется при невырожденном преобразовании\\
-$$\overline{a_{12}}\frac{\partial^2u}{\partial\xi\partial\eta}=F(\xi, \eta, \pderiv{u}{\xi}, \pderiv{u}{\eta})$$
+$$\overline{a_{12}}\frac{\partial^2u}{\partial\xi\partial\eta}=F(\xi, \eta, u, \pderiv{u}{\xi}, \pderiv{u}{\eta})$$
 
 \par Если уравнения $\phi(x,y) = C_1$ и $\psi(x,y)=C_2$ разрешимы относительно $y$, то $y=f_1(x, C_1), y=f_2(x, C_2)$ - два семейства линий, которые являются характеристическими линиями для уравнения гиперболического типа. \\
 
@@ -66,7 +66,7 @@ $\phi(x,y)$ удовлетворяет (\ref{eq:1.7.2}) $\implies \overline{a_{1
  = (\sqrt{a_{11}}\phi_x + \sqrt{a_{22}}\phi_y)(\sqrt{a_{11}}\psi_x + \sqrt{a_{22}}\psi_y) = 0
 \end{gather*}
 
-$$\frac{\partial^2u}{\partial\eta^2} = F(\xi, \eta, \pderiv{u}{\xi}, \pderiv{u}{\eta})$$\\
+$$\frac{\partial^2u}{\partial\eta^2} = F(\xi, \eta, u, \pderiv{u}{\xi}, \pderiv{u}{\eta})$$\\
 Если $\phi(x,y)=C_1 \implies y = f_1(x, C_1)$ - одно семейство линий, называаемых характеристическими линиями для уравнения параболического типа.\\
 
 \subsection*{Эллиптический тип:}
